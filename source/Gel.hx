@@ -10,7 +10,7 @@ class Gel extends FlxSprite
 	private var MAX_LEVEL(default, never):Int = 100;
 
 	// Usless Stats that have no pupose yet
-	public var Int:Int = 1; // had to be somewhat smart to get out of the egg
+	public var Intellect:Int = 1; // had to be somewhat smart to get out of the egg
 	public var Age:Int = 0;
 
 	// Mood Modifiers
@@ -18,11 +18,14 @@ class Gel extends FlxSprite
 	public var Discipline:Int = 50;
 	public var Fullness = 50;
 	public var Sleepiness = 0;
+	public var Waste = 0;
 
 	//private var _inEgg:Bool = true;
 	private var _isHungry:Bool = false;
-	private var _hasEaten:Bool = false;
+	private var _wasteReady:Bool = false;
 	private var _madeWaste:Bool = false;
+	private var _isTired:Bool = false;
+	private var _isAsleep:Bool = false;
 
 	// Mood
 	private var _currentMood:Mood = NEUTRAL;
@@ -35,19 +38,21 @@ class Gel extends FlxSprite
 		super(X, Y);
 
 		loadGraphic(AssetPaths.Player__png, true, 64, 64);
-		animation.add("blink", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
-
+		animation.add("neutral", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
+		animation.add("happy", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
+		animation.add("angry", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
 
 		// DEBUG
 		FlxG.watch.add(this, "Wait");
 		FlxG.watch.add(this, "Happiness");
+		FlxG.watch.add(this, "Discipline");
 		FlxG.watch.add(this, "Fullness");
 	}
 
 	override function update(elsapsed:Float):Void
 	{
 		if (animation.curAnim == null)
-			animation.play("blink");
+			animation.play("neutral");
 
 		super.update(elsapsed);
 	}
@@ -72,9 +77,29 @@ class Gel extends FlxSprite
 		{
 			Fullness += 25;
 			Happiness += 10;
+			Discipline -=5;
 		}
 
 		checkRange();
+	}
+
+	public function Praise():Void
+	{
+		Wait = true;
+
+		Happiness += 10;
+		Discipline -= 10;
+
+		checkRange();
+	}
+
+	public function Scold():Void
+	{
+		Wait = true;
+
+		Happiness -= 10;
+		Discipline += 10;
+
 	}
 
 	private function checkRange():Void
@@ -102,9 +127,11 @@ enum Mood
 	HAPPY;
 	ANGRY;
 	HUNGRY;
-	TIRED;
-	WASTE;
-	
+	SLEEPY;
+
+	WASTING;
+	SLEEPING;
+
 	ENCOURAGED;
 	SAD;
 }

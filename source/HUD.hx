@@ -209,6 +209,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		{
 			switch(option)
 			{
+				// INFO
 				case 0:
 				//
 
@@ -216,21 +217,27 @@ class HUD extends FlxTypedGroup<FlxSprite>
 				case 1:
 					feedGel();
 
+				// TRAIN
 				case 2:
 					//
 
+				// REST
 				case 3:
 					//
 
+				// CHEER
 				case 4:
-					//
+					praiseGel();
 
+				// SCOLD
 				case 5:
-					//
+					scoldGel();
 
+				// WIPE
 				case 6:
 					//
 
+				// CONFIG
 				case 7:
 					//
 			}
@@ -243,6 +250,20 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		itemJoin("F");
 		_gel.EatFood();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function praiseGel():Void
+	{
+		itemJoin("C");
+		_gel.Praise();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function scoldGel():Void
+	{
+		itemJoin("S");
+		_gel.Scold();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
