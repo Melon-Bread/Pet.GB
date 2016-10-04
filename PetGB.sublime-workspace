@@ -1,0 +1,915 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"check",
+				"checkRange(  )\tVoid"
+			],
+			[
+				"Max",
+				"MAX_LEVEL\tInt"
+			],
+			[
+				"Ma",
+				"MAX_LEVEL\tInt"
+			],
+			[
+				"menu",
+				"_menuOption\tInt"
+			],
+			[
+				"_st",
+				"_statDiscipline"
+			],
+			[
+				"_s",
+				"_statMood"
+			],
+			[
+				"_",
+				"_statAge"
+			],
+			[
+				"Con",
+				"Config__png\tString"
+			],
+			[
+				"_sp",
+				"_sprGel\tGel"
+			],
+			[
+				"el",
+				"elsapsed"
+			],
+			[
+				"E",
+				"Egg_New__png\tString"
+			],
+			[
+				"_spr",
+				"_sprSelect\tflixel.FlxSprite"
+			],
+			[
+				"_m",
+				"_menuOption\tInt"
+			],
+			[
+				"_spS",
+				"_sprSelect\tvar"
+			],
+			[
+				"men",
+				"_menuOption"
+			],
+			[
+				"tmp",
+				"tmpSelect__png\tString"
+			],
+			[
+				"Flx",
+				"FlxSprite\tclass"
+			],
+			[
+				"_sprS",
+				"_sprSelect\tflixel.FlxSprite"
+			],
+			[
+				"S",
+				"Select__ogg\tString"
+			],
+			[
+				"Menu",
+				"_menuChoice"
+			],
+			[
+				"me",
+				"_menuChoice"
+			],
+			[
+				"re",
+				"justReleased\tflixel.input.keyboard.FlxKeyList"
+			],
+			[
+				"snd",
+				"_sndNext\tvar"
+			],
+			[
+				"_snd",
+				"_sndNext"
+			],
+			[
+				"se",
+				"_sndSelect"
+			],
+			[
+				"_sprC",
+				"_sprConfig\tflixel.FlxSprite"
+			],
+			[
+				"_txt",
+				"_txtWipe"
+			],
+			[
+				"_Ch",
+				"_sprCheer\tflixel.FlxSprite"
+			],
+			[
+				"sp",
+				"_sprRest"
+			],
+			[
+				"FlxS",
+				"FlxSprite\tflixel"
+			],
+			[
+				"_tx",
+				"_txtConfig"
+			],
+			[
+				"From",
+				"fromRGB(...)\tflixel.util.FlxColor"
+			],
+			[
+				"he",
+				"height\tFloat"
+			],
+			[
+				"HU",
+				"HUD_Background__png\tString"
+			],
+			[
+				"H",
+				"HUD_Background__png\tString"
+			],
+			[
+				"pl",
+				"play(...)\tflixel.system.FlxSound"
+			],
+			[
+				"from",
+				"fromRGB(...)\tflixel.util.FlxColor"
+			],
+			[
+				"scr",
+				"screenCenter(...)\tflixel.FlxObject"
+			],
+			[
+				"bg",
+				"set_bgColor(...)\tflixel.util.FlxColor"
+			],
+			[
+				"p",
+				"player__png\tString"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"_t",
+				"_txtHealth\tflixel.text.FlxText"
+			],
+			[
+				"spr",
+				"_sprHealth"
+			],
+			[
+				"Fl",
+				"FlxG"
+			],
+			[
+				"FLx",
+				"FlxColor\tclass"
+			],
+			[
+				"forE",
+				"forEachAlive(...)\tUnknown<1>"
+			],
+			[
+				"grp",
+				"_grpEnemies"
+			],
+			[
+				"e",
+				"elapsed"
+			],
+			[
+				"moveTowa",
+				"moveTowardsPoint(...)\tVoid"
+			],
+			[
+				"idle",
+				"_idleTimer\tFloat"
+			],
+			[
+				"Init",
+				"InitState\tNull<Void -> Void>"
+			],
+			[
+				"enti",
+				"enity"
+			],
+			[
+				"en",
+				"enemy"
+			],
+			[
+				"par",
+				"parseInt( x : String )\tNull<Int>"
+			],
+			[
+				"_grp",
+				"_grpEnemies\tflixel.group.FlxTypedGroup<Enemy>"
+			],
+			[
+				"En",
+				"Enemy\tclass"
+			],
+			[
+				"a",
+				"alive\tBool"
+			],
+			[
+				"FlxTyped",
+				"FlxTypedGroup\tflixel.group.FlxGroup"
+			],
+			[
+				"c",
+				"coin__png\tString"
+			],
+			[
+				"fun",
+				"Function\tflash.utils"
+			],
+			[
+				"foll",
+				"follow(...)\tVoid"
+			],
+			[
+				"co",
+				"clolide"
+			],
+			[
+				"entit",
+				"entityName"
+			],
+			[
+				"setTile",
+				"setTileProperties(...)\tVoid"
+			],
+			[
+				"tile",
+				"tiles__png\tString"
+			],
+			[
+				"add",
+				"addons\tpackage"
+			],
+			[
+				"FlxTil",
+				"FlxTilemap\tflixel.tile"
+			],
+			[
+				"F",
+				"FlxObject\tclass"
+			],
+			[
+				"move",
+				"movement(  )\tVoid"
+			],
+			[
+				"ro",
+				"rotate(...)\tflixel.math.FlxPoint"
+			],
+			[
+				"FlxC",
+				"FlxColor"
+			],
+			[
+				"flix",
+				"flixel\tpackage"
+			],
+			[
+				"ass",
+				"assets"
+			],
+			[
+				"l",
+				"listdir"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"T",
+				"TARGET"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/MenuState.hx",
+			"settings":
+			{
+				"buffer_size": 1634,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/PlayState.hx",
+			"settings":
+			{
+				"buffer_size": 720,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/Gel.hx",
+			"settings":
+			{
+				"buffer_size": 1670,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/HUD.hx",
+			"settings":
+			{
+				"buffer_size": 5591,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "imp",
+		"selected_items":
+		[
+			[
+				"imp",
+				"Haxe: Organize Imports"
+			],
+			[
+				"im",
+				"Haxe: Organize Imports"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"im\t",
+				"Haxe: Organize Imports"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"impo",
+				"Haxe: Organize Imports"
+			],
+			[
+				"import",
+				"Haxe: Organize Imports"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"new",
+				"Haxe: New Class"
+			],
+			[
+				"theme",
+				"Boxy Theme: Activation"
+			],
+			[
+				"i",
+				"Haxe: Organize Imports"
+			],
+			[
+				"hexe",
+				"Haxe: Organize Imports"
+			],
+			[
+				"haxe",
+				"Haxe: Restart Server"
+			],
+			[
+				"Haxe",
+				"Haxe: New Class"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
+			[
+				"r",
+				"Haxe: Run build"
+			],
+			[
+				"buil",
+				"Haxe: Run build"
+			],
+			[
+				"run ",
+				"Haxe: Run build"
+			],
+			[
+				"build",
+				"Haxe: Run build"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"git p",
+				"Git: Push"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 414.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/C/Users/melon/Documents/Projects/PetGB/source/Main.hx",
+		"/C/Users/melon/Documents/Projects/PetGB/Project.xml",
+		"/C/Users/melon/Documents/Projects/PetGB/source/MenuState.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/4,1,1/include.xml",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/source/Enemy.hx",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/source/FSM.hx",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/source/Player.hx",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/source/Coin.hx",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/source/Player2.hx",
+		"/C/Users/melon/Documents/HaxeFixel_Projects/FlixelTut/Project.xml",
+		"/C/HaxeToolkit/haxe/lib/flixel/4,1,1/flixel/FlxSubState.hx",
+		"/C/HaxeToolkit/haxe/lib/flixel/4,1,1/flixel/FlxGame.hx",
+		"/C/Users/melon/AppData/Roaming/Sublime Text 3/Packages/Haxe/Support/Default.sublime-keymap",
+		"/C/Users/melon/Downloads/HelloWorld/source/MenuState.hx",
+		"/C/Users/melon/Downloads/VITO/New folder (3)/theme.txt",
+		"/C/Users/melon/AppData/Roaming/BetterDiscord/themes/Shiratsuyu-Class.theme.css",
+		"/C/Users/melon/AppData/Roaming/BetterDiscord/plugins/Bunny.plugin.js",
+		"/C/Users/melon/AppData/Roaming/BetterDiscord/themes/BunniesMcGee.theme.css",
+		"/C/Users/melon/AppData/Roaming/BetterDiscord/themes/Discord Rounded Glass_zaku.theme.css",
+		"/C/Users/melon/_vimrc",
+		"/C/Users/melon/AppData/Roaming/BetterDiscord/themes/Discord Rounded Glass.theme.css",
+		"/C/Users/melon/Downloads/SFV Unlocker/readme.txt",
+		"/C/Users/melon/Downloads/StreetFighterV+15Tr-LNG/StreetFighterV+15Tr-LNG_v1.07 - INFO.txt",
+		"/C/Users/melon/Downloads/StreetFighterV+15Tr-LNG/VERY IMPORTANT!.txt",
+		"/C/Users/melon/Downloads/curl.cmd",
+		"/C/Users/melon/AppData/Local/nvim/init.vim",
+		"/E/Games/PS3/Tools/psnstuff/fixes/BLAZBLUE_CHREXTEND_NPUB31634_FIX101_421/links.txt",
+		"/C/Users/melon/Downloads/PS3/DLC/update.txt",
+		"/C/Users/melon/Programs/RetroArch-x86_64-Windows/retroarch.cfg",
+		"/E/Games/PS3/Tools/psx_classics/Instructions.txt",
+		"/C/Users/melon/Programs/RetroArch-x86_64-Windows/autoconfig/usb gamepad           .cfg",
+		"/C/Users/melon/AppData/Local/Temp/7zO48AE261A/FUGAZI NFO.txt",
+		"/E/Games/PS3/Tools/psx_classics/PS1 Classics PSN Work Folder/PARAM.SFO",
+		"/E/Games/PS3/Tools/psx_classics/PS1 Classics ICON0 PICS/readme.txt",
+		"/E/Games/PS3/Tools/psx_classics/sign.py",
+		"/C/Users/melon/Downloads/something.reg",
+		"/C/Users/melon/Downloads/PS3/boot_plugins.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO0AA6D4CB/INSTALLATION.md",
+		"/C/Users/melon/Downloads/PS3/ps3xpad_0.8/plugins/ps3xpad/xpad_devices.txt",
+		"/C/Users/melon/Downloads/PS3/ps3xpad_0.8/plugins/ps3xpad/xpad_settings.txt",
+		"/C/Users/melon/Downloads/PS3/ps3xpad_0.8/plugins/ps3xpad/xpad_remap.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zOCBDFDF6B/4.80.1_D-REX_Link.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zOC4E2DADF/readme.txt",
+		"/C/Users/melon/Downloads/VITO/game.txt",
+		"/C/Users/melon/Downloads/VITO/New folder/rinCheat/README.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO423F271E/4.80.1_REX_Link.txt",
+		"/H/boot_config.ini",
+		"/H/luma/locales/000400000017EA00.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO4B221BCA/game.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO4075BA46/ReadMe.txt",
+		"/C/Users/melon/Downloads/2016-09-06_RetroArch/tmp/nxengine/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/Discord_Reborn.theme.css",
+		"/H/luma/update.cfg",
+		"/C/Users/melon/Downloads/VITO/vita_games.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO89AD9F18/README.txt",
+		"/C/Users/melon/Downloads/VITO/g/game.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO8452D42A/boot_config.ini",
+		"/C/msys64/usr/local/vitasdk/arm-vita-eabi/include/psp2/io/fcntl.h",
+		"/C/Users/melon/Documents/Projects/c-test/C-Test/hello_vita/hello_vita.mk",
+		"/C/msys64/usr/local/vitasdk/arm-vita-eabi/include/psp2/display.h",
+		"/C/Users/melon/Documents/Projects/c-test/C-Test/hello_vita/hello_vita.project",
+		"/C/Users/melon/Documents/Projects/c-test/C-Test/hello_vita/main.c",
+		"/C/Users/melon/Documents/Projects/c-test/C-Test/cmake-build-Debug/Makefile",
+		"/C/Users/melon/Documents/Projects/c-test/C-Test/CMakeLists.txt",
+		"/C/Users/melon/Documents/ClionProjects/untitled/main.c",
+		"/C/Users/melon/AppData/Local/Temp/7zO4F346A3E/README.md",
+		"/C/Users/melon/AppData/Local/Temp/7zO09B07ECB/readme.txt",
+		"/C/Users/melon/Downloads/VITO/vitashell-themes-master/themes/monokuma/colors.txt",
+		"/C/Users/melon/Downloads/VITO/colors.txt",
+		"/C/Program Files (x86)/Steam/steamapps/common/Disgaea PC/pad.cfg",
+		"/C/Users/melon/Documents/GitHub/RetroArch_Icons_Vita/build.py",
+		"/C/Users/melon/Downloads/VITO/vitashell-themes-master/themes/MinimalistShell-Syz/colors.txt",
+		"/C/Users/melon/Downloads/VITO/VitaShell/theme/theme.txt",
+		"/C/Users/melon/AppData/Local/Temp/7zO4519F3A0/theme.txt",
+		"/C/Users/melon/Documents/GitHub/EagleJab/EagleJab.py",
+		"/E/Games/VITA/Games/README.txt",
+		"/C/Users/melon/Documents/GitHub/RetroArch_Icons_Vita/cores/mupen64plus/livearea/contents/template.xml",
+		"/C/msys64/home/melon/Git/ebootSegs/main.c",
+		"/C/Users/melon/Documents/GitHub/RetroArch_Icons_Vita/cores/yabause/livearea/contents/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/tmp/nxengine_libretro/sce_sys/livearea/contents/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/tmp/nxengine_libretro/livearea/contents/template.xml",
+		"/C/Users/melon/AppData/Local/Temp/7zO46954437/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/tmp/sce_sys/livearea/contents/template.xml",
+		"/C/msys64/home/melon/Git/VitaTester/main.c",
+		"/C/Users/melon/Desktop/PS3_Files_Used_By_Versatile/4 - Downgrader/Download Links.txt",
+		"/C/Users/melon/Desktop/PS3_Files_Used_By_Versatile/2 - Verify and Dump Patching Tools/E3 Flasher Error Codes.txt",
+		"/C/msys64/home/melon/.bashrc",
+		"/C/msys64/home/melon/Git/VitaTester/Makefile",
+		"/C/msys64/home/melon/.profile",
+		"/C/msys64/home/melon/Git/vdpm-master/config.travis",
+		"/C/msys64/home/melon/Git/vdpm-master/_work/freetype-2.6.5/CMakeLists.txt",
+		"/C/msys64/home/melon/Git/vdpm-master/pkg/freetype-2.6.5",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/fbalpha2012/livearea/contents/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/2048/livearea/contents/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/dosbox/livearea/contents/template.xml",
+		"/C/msys64/home/melon/Git/vdpm-toolchain-deps/config.travis",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/gambatte/livearea/contents/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/tyrquake/livearea/contents/template.xml",
+		"/C/msys64/home/melon/Git/vdpm-toolchain-deps/config.sample",
+		"/C/Users/melon/Downloads/HENkaku/Icons and Live Area Images (HENkaku)/RETR00003/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/2016-08-03_RetroArch/template.xml",
+		"/C/Users/melon/AppData/Local/Temp/7zO0186D34C/template.xml",
+		"/C/Users/melon/Desktop/RA_HENkaku_Icons/cores/desmume/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/HENkaku/Icons and Live Area Images (HENkaku)/RETR00007/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/HENkaku/Icons and Live Area Images (HENkaku) (1)/FRAN00001 - SMS+/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/HENkaku/Icons and Live Area Images (HENkaku)/RETR00010/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/HENkaku/Icons and Live Area Images (HENkaku) (1)/SNES LIVEAREA SQL.txt",
+		"/C/Users/melon/Downloads/HENkaku/samples-master/hello_world/Makefile",
+		"/C/Users/melon/Downloads/HENkaku/samples-master/hello_cpp_world/Makefile",
+		"/C/Users/melon/Downloads/HENkaku/samples-master/hello_world/main.c",
+		"/C/msys64/msys2_shell.cmd",
+		"/C/Users/melon/AppData/Local/Temp/7zO8E3FA4B2/Readme.txt",
+		"/C/Users/melon/Downloads/vpk-tmp/MGBA00001/sce_sys/livearea/contents/template.xml",
+		"/C/Users/melon/Downloads/HENkaku/samples-master/build.sh",
+		"/C/Users/melon/Downloads/vpk-tmp/MGBA00001/sce_sys/param.sfo",
+		"/C/Users/melon/Programs/Ice/emulators.txt",
+		"/C/Users/melon/Programs/Ice/consoles.txt",
+		"/C/Users/melon/Programs/Ice/config.txt",
+		"/C/Users/melon/Desktop/RAVBA/vbam.ini",
+		"/C/Users/melon/Downloads/Turn_Off_Fast_Startup.bat",
+		"/C/Users/melon/Downloads/RAVBA/vbam.ini",
+		"/C/Users/melon/Programs/KanColleViewer/Licenses/tmp/happypanda.log",
+		"/C/Users/melon/AppData/Local/Temp/7zO495B50A3/version.txt",
+		"/C/Users/melon/Programs/Ice/version.txt",
+		"/C/Users/melon/Downloads/[Fuwanovel] Grisaia no Kajitsu/Grisaia Installation Instructions.txt",
+		"/C/Users/melon/Downloads/TSAA/TMS Uncensored/README.txt",
+		"/E/Videos/AMVs/VC '16/Results.txt",
+		"/F/boot_config.ini"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"stat",
+			"_sprGel",
+			"Choice",
+			"positive",
+			"Learn",
+			"Praise",
+			"Clean",
+			"Teach",
+			"_txtSleep",
+			"_txtStats",
+			"Moneny",
+			"_idleTmr",
+			"_idleTime",
+			"Chapter ",
+			"background",
+			"workbench",
+			"retrospers",
+			"PROJECT",
+			"scr",
+			"full",
+			"entry",
+			"tile",
+			"zelda",
+			"tile",
+			"chee",
+			"cheevos",
+			"inpu",
+			"Super",
+			"FalconPunch",
+			"listings",
+			"Connector"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"_gelPet",
+			"Option",
+			"increment",
+			"Train",
+			"Cheer",
+			"Wipe",
+			"Learn",
+			"_txtRest",
+			"_txtInfo",
+			"Money",
+			"_idleTimer",
+			"CH",
+			"TARGET",
+			"EagleJab"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/MenuState.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								878,
+								878
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/PlayState.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/Gel.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1595,
+								1595
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 780.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "source/HUD.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2861,
+								2861
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1762.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 94.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python 3/Python3.sublime-build",
+	"project": "PetGB.sublime-project",
+	"replace":
+	{
+		"height": 90.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
