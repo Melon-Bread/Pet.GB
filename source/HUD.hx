@@ -6,6 +6,7 @@ import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+using flixel.util.FlxSpriteUtil;
 
 class HUD extends FlxTypedGroup<FlxSprite>
 {
@@ -15,8 +16,8 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private var _sprInfo:FlxSprite;
 	private var _txtFeed:FlxText;
 	private var _sprFeed:FlxSprite;
-	private var _txtTrain:FlxText;
-	private var _sprTrain:FlxSprite;
+	private var _txtStudy:FlxText;
+	private var _sprStudy:FlxSprite;
 	private var _txtRest:FlxText;
 	private var _sprRest:FlxSprite;
 
@@ -72,15 +73,15 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprFeed = new FlxSprite((_txtFeed.x + 2), (_txtFeed.y - 17), AssetPaths.Feed__png);
 		add(_sprFeed);
 
-		// Train
-		_txtTrain = new FlxText((_txtFeed.x + _txtFeed.width - 1), (_sprTop.height - 13), 0, "Train", 8);
-		_txtTrain.setFormat(AssetPaths.EarlyGameBoy__ttf, 8, FlxColor.fromRGB(8, 24, 32, 0), CENTER);
-		add(_txtTrain);
-		_sprTrain = new FlxSprite((_txtTrain.x + 6), (_txtTrain.y - 17), AssetPaths.Train__png);
-		add(_sprTrain);
+		// Study
+		_txtStudy = new FlxText((_txtFeed.x + _txtFeed.width - 1), (_sprTop.height - 13), 0, "Study", 8);
+		_txtStudy.setFormat(AssetPaths.EarlyGameBoy__ttf, 8, FlxColor.fromRGB(8, 24, 32, 0), CENTER);
+		add(_txtStudy);
+		_sprStudy = new FlxSprite((_txtStudy.x + 6), (_txtStudy.y - 17), AssetPaths.Study__png);
+		add(_sprStudy);
 
 		// Rest
-		_txtRest = new FlxText((_txtTrain.x + _txtTrain.width), (_sprTop.height - 13), 0, "Rest", 8);
+		_txtRest = new FlxText((_txtStudy.x + _txtStudy.width), (_sprTop.height - 13), 0, "Rest", 8);
 		_txtRest.setFormat(AssetPaths.EarlyGameBoy__ttf, 8, FlxColor.fromRGB(8, 24, 32, 0), CENTER);
 		add(_txtRest);
 		_sprRest = new FlxSprite((_txtRest.x + 2), (_txtRest.y - 17), AssetPaths.Rest__png);
@@ -135,11 +136,14 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprInteraction.visible = false;
 		add(_sprInteraction);
 
-		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "X", 8);
+		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "", 8);
 		add(_tmpText);
 
 		// DEBUG
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
+		FlxG.watch.add(_sprInteraction, "alpha", "Interact Alpha");
+		FlxG.watch.add(_sprInteraction, "visible", "Interact Visible");
+		FlxG.watch.add(_tmpText, "text", "Temp Text");
 	}
 
 	override public function update(elapsed:Float):Void
@@ -201,47 +205,69 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function makeOption(option:Int):Void
 	{
-		switch(option)
+		if(!_gel.Wait)
 		{
-			case 0:
+			switch(option)
+			{
+				case 0:
 				//
 
-			// FEED
-			case 1:
-				feedGel();
+				// FEED
+				case 1:
+					feedGel();
 
-			case 2:
-				//
+				case 2:
+					//
 
-			case 3:
-				//
+				case 3:
+					//
 
-			case 4:
-				//
+				case 4:
+					//
 
-			case 5:
-				//
+				case 5:
+					//
 
-			case 6:
-				//
+				case 6:
+					//
 
-			case 7:
-				//
+				case 7:
+					//
+			}
+			_sndSelect.play(true);
 		}
-		_sndSelect.play(true);
+
 	}
 
 	private function feedGel():Void
 	{
+		itemJoin("F");
 		_gel.EatFood();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function itemJoin(letter:String = ""):Void
+	{
+		_sprInteraction.visible = true;
+		_tmpText.text = letter;
+	}
+
+	private function itemLeave(_):Void
+	{
+		_sprInteraction.visible = false;
+		_tmpText.text = "";
+		_sprInteraction.alpha = 1;
+		_gel.Wait = false;
 	}
 
 }
+
+// TODO: Actually use this instead of _menuChoice
 enum MenuOption
 {
 	INFO;
 	FEED;
-	TRAIN;
+	STUDY;
 	REST;
 	CHEER;
 	SCOLD;
