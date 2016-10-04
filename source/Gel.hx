@@ -17,6 +17,7 @@ class Gel extends FlxSprite
 	public var Happiness:Int = 50;
 	public var Discipline:Int = 50;
 	public var Fullness = 50;
+	public var Sleepiness = 0;
 
 	//private var _inEgg:Bool = true;
 	private var _isHungry:Bool = false;
