@@ -31,6 +31,10 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private var _txtConfig:FlxText;
 	private var _sprConfig:FlxSprite;
 
+	// Gel Boxes
+	private var _sprEmotion:FlxSprite;
+	private var _sprInteraction:FlxSprite;
+
 	// Sounds
 	private var _sndSelect:FlxSound;
 	private var _sndNext:FlxSound;
@@ -38,12 +42,17 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	// Misc
 	private var _menuOption:Int;
 	private var _sprSelect:FlxSprite;
+	private var _tmpText:FlxText;
 
 	private var _gel:Gel;
 	
 	public function new(g:Gel)
 	{
 		super();
+
+		// Misc
+		_menuOption = 0;
+		_gel = g;
 
 		// Top
 		_sprTop = new FlxSprite(0, 0, AssetPaths.HUD_Background__png);
@@ -76,7 +85,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		add(_txtRest);
 		_sprRest = new FlxSprite((_txtRest.x + 2), (_txtRest.y - 17), AssetPaths.Rest__png);
 		add(_sprRest);
-
 
 		// Bottom
 		_sprBottom = new FlxSprite(0, (FlxG.height - _sprTop.height), AssetPaths.HUD_Background__png);
@@ -114,17 +122,24 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sndSelect = FlxG.sound.load(AssetPaths.Select__ogg);
 		_sndNext = FlxG.sound.load(AssetPaths.Next__ogg);
 
-		// Misc
-		_menuOption = 0;
-		_gel = g;
-
+		// Menu Selecter
 		_sprSelect = new FlxSprite(0, 0, AssetPaths.tmpSelect__png);
 		add(_sprSelect);
 
+		// Gel Boxes
+		_sprEmotion = new FlxSprite(26, 51, AssetPaths.tmp24__png);
+		_sprEmotion.visible = false;
+		add(_sprEmotion);
+
+		_sprInteraction = new FlxSprite(111, 78, AssetPaths.tmp24__png);
+		_sprInteraction.visible = false;
+		add(_sprInteraction);
+
+		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "X", 8);
+		add(_tmpText);
+
 		// DEBUG
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
-		FlxG.watch.add(_sprSelect, "x", "Selection X");
-		FlxG.watch.add(_sprSelect, "y", "Selection Y");
 	}
 
 	override public function update(elapsed:Float):Void
