@@ -22,6 +22,7 @@ class MenuState extends FlxState
 	{
 		set_bgColor(FlxColor.fromRGB(136, 192, 112, 0));
 		FlxG.mouse.visible = false;
+		FlxG.autoPause = false;
 
 		_sprBackground = new FlxSprite(0, 0, AssetPaths.background__png);
 		add(_sprBackground);
