@@ -10,7 +10,7 @@ class Gel extends FlxSprite
 	private var MAX_LEVEL(default, never):Int = 100;
 
 	// Usless Stats that have no pupose yet
-	public var Int:Int = 0;
+	public var Int:Int = 1; // had to be somewhat smart to get out of the egg
 	public var Age:Int = 0;
 
 	// Mood Modifiers
@@ -25,9 +25,10 @@ class Gel extends FlxSprite
 	private var _madeWaste:Bool = false;
 
 	// Mood
-	private var _currentMood:Mood = NORMAL;
+	private var _currentMood:Mood = NEUTRAL;
 
-
+	//
+	public var Wait:Bool = false;
 
 	public function new(?X:Float=0, ?Y:Float=0)
 	{
@@ -38,6 +39,7 @@ class Gel extends FlxSprite
 
 
 		// DEBUG
+		FlxG.watch.add(this, "Wait");
 		FlxG.watch.add(this, "Happiness");
 		FlxG.watch.add(this, "Fullness");
 	}
@@ -55,14 +57,22 @@ class Gel extends FlxSprite
 
 	}
 
-	/* 
-	*
-	*/
+
 	public function EatFood():Void
 	{
+		Wait = true;
 		// Stat changes
-		Fullness += 25;
-		Happiness += 10;
+
+		if ((Fullness + 25) > 100)
+		{
+			Happiness -= 5; // Unhappy from over feeding
+			// TODO:  Add another penelty
+		}
+		else
+		{
+			Fullness += 25;
+			Happiness += 10;
+		}
 
 		checkRange();
 	}
@@ -88,7 +98,7 @@ class Gel extends FlxSprite
 
 enum Mood 
 {
-	NORMAL;
+	NEUTRAL;
 	HAPPY;
 	ANGRY;
 	HUNGRY;
