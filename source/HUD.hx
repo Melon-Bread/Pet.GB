@@ -165,12 +165,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			nextOption(false);
 		else if (FlxG.keys.justPressed.X) 
 			makeOption(_menuOption);
-		else if (FlxG.keys.justPressed.Q) 
-			_gel._isHungry = !_gel._isHungry;
-		else if (FlxG.keys.justPressed.W) 
-			_gel._wasteReady = !_gel._wasteReady;
-		else if (FlxG.keys.justPressed.E) 
-			_gel._isTired = !_gel._isTired;
 
 
 		_gel.update(elapsed);
