@@ -50,7 +50,7 @@ class MenuState extends FlxState
 
 	override public function update(elapsed:Float):Void
 	{
-		if(FlxG.keys.pressed.ENTER)
+		if(FlxG.keys.pressed.ENTER || FlxG.gamepads.anyJustPressed(START))
 			pressStart();
 
 		super.update(elapsed);
