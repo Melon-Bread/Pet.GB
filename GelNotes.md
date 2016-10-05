@@ -12,6 +12,18 @@
 
 ---
 
+#Time
+
+##One Hour
+	* Every 3min real time is 1 game hour
+	* Effects Stats/Modifers
+		* Hun
+
+##One Day:
+	* 24 hours = 1 Day
+	* Resets back to 0 when hours = 24
+	* Age +1
+
 #Moods
 
 ##Main Moods  
@@ -23,7 +35,7 @@
 	* Long term happy prevent END_GAME?
 
 ###NEUTRAL:
-	* Requires Happiness 40-59
+	* Requires Happiness 40-60
 	* MainAnimation = netrual
 	* Smallest of the main mood windows
 	* No real loss or real gain
@@ -53,7 +65,6 @@
 ###WASTING:
 	* Requires _madeWaste
 	* Untriggers _wasteReady
-	* InteractionsBox = "waste"
 	* Every hour with waste lowers stats
 		* Discipline -10
 		* Happiness -10
@@ -67,13 +78,11 @@
 
 ---
 
-#Modifiers
 
 ##Main Modifiers
 
-###Happiness:
-	* Controls main animation  
-		* 0-39 = ANGRY   
+#
+		* 0-39 = ANGRY   252
 	  	* 40-59 = NEUTRAL  
 	  	* 61-100 = HAPPY  
 	* Shifts the most out of the main modifiers

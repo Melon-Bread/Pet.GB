@@ -361,7 +361,7 @@
 			"file": "source/HUD.hx",
 			"settings":
 			{
-				"buffer_size": 6953,
+				"buffer_size": 7233,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -370,7 +370,7 @@
 			"file": "source/Gel.hx",
 			"settings":
 			{
-				"buffer_size": 2471,
+				"buffer_size": 2848,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -379,7 +379,7 @@
 			"file": "GelNotes.md",
 			"settings":
 			{
-				"buffer_size": 4278,
+				"buffer_size": 4200,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -567,8 +567,7 @@
 	"expanded_folders":
 	[
 		"/C/Users/melon/Documents/Projects/Pet.GB",
-		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp",
-		"/C/Users/melon/Documents/Projects/Pet.GB/assets/images"
+		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp"
 	],
 	"file_history":
 	[
@@ -717,6 +716,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/l6",
+			"/16",
 			"body",
 			"train",
 			"stat",
@@ -757,6 +758,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"Study",
 			"",
 			"_gelPet",
@@ -783,7 +785,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -810,7 +812,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 312.0,
+						"translation.y": 213.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -852,15 +854,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6953,
+						"buffer_size": 7233,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6094,
-								6094
+								6752,
+								6752
 							]
 						],
 						"settings":
@@ -870,10 +872,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1370.0,
+						"translation.y": 1290.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -882,15 +884,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2471,
+						"buffer_size": 2848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2437,
-								2437
+								2227,
+								2227
 							]
 						],
 						"settings":
@@ -900,7 +902,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 886.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -918,15 +920,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4278,
+						"buffer_size": 4200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								296,
-								296
+								1084,
+								1084
 							]
 						],
 						"settings":
@@ -937,10 +939,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1249.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -986,7 +988,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 94.0
+		"height": 88.0
 	},
 	"output.find_results":
 	{
@@ -1030,7 +1032,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
