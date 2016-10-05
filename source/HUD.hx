@@ -6,7 +6,6 @@ import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import flixel.input.gamepad.FlxGamepad;
 using flixel.util.FlxSpriteUtil;
 
 
@@ -159,15 +158,14 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		// TODO: Add gamepad support
-		// TODO: Add WASD support?
-		// TODO: Add vertical menu movent
-		if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
+
+		if (FlxG.keys.justPressed.RIGHT)
 			nextOption(true);
-		else if (FlxG.keys.justPressed.LEFT || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
+		else if (FlxG.keys.justPressed.LEFT)
 			nextOption(false);
-		else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
+		else if (FlxG.keys.justPressed.X) 
 			makeOption(_menuOption);
+
 
 		_gel.update(elapsed);
 
@@ -191,7 +189,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function nextOption(increment:Bool):Void
 	{
-		// TODO: Add vertical menu movent
 		if (increment)
 		{
 			if (_menuOption >= 7)
