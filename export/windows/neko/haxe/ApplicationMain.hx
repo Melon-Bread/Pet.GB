@@ -511,7 +511,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "251",
+			build: "289",
 			company: "Melon Bread",
 			file: "Pet.GB",
 			fps: 59,
