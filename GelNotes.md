@@ -17,7 +17,9 @@
 ##One Hour
 	* Every 3min real time is 1 game hour
 	* Effects Stats/Modifers
-		* Hun
+		* Fullness -10
+		* Sleepiness +10
+		* Waste +(rand(2-5) * 5) [!_notHungry]
 
 ##One Day:
 	* 24 hours = 1 Day
@@ -81,7 +83,7 @@
 
 ##Main Modifiers
 
-#
+###Happiness:
 		* 0-39 = ANGRY   252
 	  	* 40-59 = NEUTRAL  
 	  	* 61-100 = HAPPY  
@@ -182,7 +184,7 @@
 	* Can only do once per hour
 	* Three outcomes
 		* Early Wipe
-			* Happiness -10
+			* Happiness -5
 		* Good Wipe
 			* Discipline +10
 			* Happiness +10
@@ -196,5 +198,6 @@
 ##CONF:
 	* Lets player change basic settings
 		* SE Volume
+		* Switch controls between Arrows (defualt) or WASD
 		* Brightness?
 	* Pauses timer when viewing
