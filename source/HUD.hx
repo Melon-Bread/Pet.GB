@@ -150,7 +150,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 		// DEBUG
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
-		FlxG.watch.add(_sprThoughts.animation, "curAnim");
 		FlxG.watch.add(_sprInteraction, "alpha", "Interact Alpha");
 		FlxG.watch.add(_sprInteraction, "visible", "Interact Visible");
 		FlxG.watch.add(_tmpText, "text", "Temp Text");
@@ -269,7 +268,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 				// WIPE
 				case 6:
-					//
+					wipeGel();
 
 				// CONFIG
 				case 7:
@@ -298,6 +297,13 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		itemJoin("S");
 		_gel.Scold();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function wipeGel():Void
+	{
+		itemJoin("W");
+		_gel.Wipe();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
