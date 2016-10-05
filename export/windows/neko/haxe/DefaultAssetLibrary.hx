@@ -56,60 +56,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		super ();
 		
 		
-		
-		
 		Font.registerFont (__ASSET__assets_data_earlygameboy_ttf);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -142,59 +89,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -717,60 +611,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if (openfl && !flash)
 		
-		
-		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_earlygameboy_ttf);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -803,112 +644,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		path.set ("assets/data/EarlyGameBoy.eot", "assets/data/EarlyGameBoy.eot");
-		type.set ("assets/data/EarlyGameBoy.eot", AssetType.BINARY);
-		path.set ("assets/data/EarlyGameBoy.svg", "assets/data/EarlyGameBoy.svg");
-		type.set ("assets/data/EarlyGameBoy.svg", AssetType.TEXT);
 		path.set ("assets/data/EarlyGameBoy.ttf", "assets/data/EarlyGameBoy.ttf");
 		type.set ("assets/data/EarlyGameBoy.ttf", AssetType.FONT);
-		path.set ("assets/data/EarlyGameBoy.woff", "assets/data/EarlyGameBoy.woff");
-		type.set ("assets/data/EarlyGameBoy.woff", AssetType.BINARY);
 		path.set ("assets/icon.png", "assets/icon.png");
 		type.set ("assets/icon.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Angry/Player-angry1-sheet.png", "assets/images/Animations/Angry/Player-angry1-sheet.png");
-		type.set ("assets/images/Animations/Angry/Player-angry1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Angry/Player-angry1.png", "assets/images/Animations/Angry/Player-angry1.png");
-		type.set ("assets/images/Animations/Angry/Player-angry1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Angry/Player-angry2.png", "assets/images/Animations/Angry/Player-angry2.png");
-		type.set ("assets/images/Animations/Angry/Player-angry2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Angry/Player-angry3.png", "assets/images/Animations/Angry/Player-angry3.png");
-		type.set ("assets/images/Animations/Angry/Player-angry3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Ashamed/Player-ashamed1-sheet.png", "assets/images/Animations/Ashamed/Player-ashamed1-sheet.png");
-		type.set ("assets/images/Animations/Ashamed/Player-ashamed1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Ashamed/Player-ashamed1.png", "assets/images/Animations/Ashamed/Player-ashamed1.png");
-		type.set ("assets/images/Animations/Ashamed/Player-ashamed1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Ashamed/Player-ashamed2.png", "assets/images/Animations/Ashamed/Player-ashamed2.png");
-		type.set ("assets/images/Animations/Ashamed/Player-ashamed2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Ashamed/Player-ashamed3.png", "assets/images/Animations/Ashamed/Player-ashamed3.png");
-		type.set ("assets/images/Animations/Ashamed/Player-ashamed3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Excited/Player-exitednew1-sheet.png", "assets/images/Animations/Excited/Player-exitednew1-sheet.png");
-		type.set ("assets/images/Animations/Excited/Player-exitednew1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Excited/Player-exitednew1.png", "assets/images/Animations/Excited/Player-exitednew1.png");
-		type.set ("assets/images/Animations/Excited/Player-exitednew1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Excited/Player-exitednew2.png", "assets/images/Animations/Excited/Player-exitednew2.png");
-		type.set ("assets/images/Animations/Excited/Player-exitednew2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Excited/Player-exitednew3.png", "assets/images/Animations/Excited/Player-exitednew3.png");
-		type.set ("assets/images/Animations/Excited/Player-exitednew3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood1-sheet.png", "assets/images/Animations/Happy/Player-1happymood1-sheet.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood1.png", "assets/images/Animations/Happy/Player-1happymood1.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood2.png", "assets/images/Animations/Happy/Player-1happymood2.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood3.png", "assets/images/Animations/Happy/Player-1happymood3.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood4.png", "assets/images/Animations/Happy/Player-1happymood4.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood4.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood5.png", "assets/images/Animations/Happy/Player-1happymood5.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood5.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Happy/Player-1happymood6.png", "assets/images/Animations/Happy/Player-1happymood6.png");
-		type.set ("assets/images/Animations/Happy/Player-1happymood6.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood1-sheet.png", "assets/images/Animations/Neutral/Player-1neturalmood1-sheet.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood1.png", "assets/images/Animations/Neutral/Player-1neturalmood1.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood2.png", "assets/images/Animations/Neutral/Player-1neturalmood2.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood3.png", "assets/images/Animations/Neutral/Player-1neturalmood3.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood4.png", "assets/images/Animations/Neutral/Player-1neturalmood4.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood4.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood5.png", "assets/images/Animations/Neutral/Player-1neturalmood5.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood5.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Neutral/Player-1neturalmood6.png", "assets/images/Animations/Neutral/Player-1neturalmood6.png");
-		type.set ("assets/images/Animations/Neutral/Player-1neturalmood6.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Sleep/Player-sleep1-sheet.png", "assets/images/Animations/Sleep/Player-sleep1-sheet.png");
-		type.set ("assets/images/Animations/Sleep/Player-sleep1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Sleep/Player-sleep1.png", "assets/images/Animations/Sleep/Player-sleep1.png");
-		type.set ("assets/images/Animations/Sleep/Player-sleep1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Sleep/Player-sleep2.png", "assets/images/Animations/Sleep/Player-sleep2.png");
-		type.set ("assets/images/Animations/Sleep/Player-sleep2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations/Sleep/Player-sleep3.png", "assets/images/Animations/Sleep/Player-sleep3.png");
-		type.set ("assets/images/Animations/Sleep/Player-sleep3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry1-sheet.png", "assets/images/Animations2/Hungry/thought-hungry1-sheet.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry1.png", "assets/images/Animations2/Hungry/thought-hungry1.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry2.png", "assets/images/Animations2/Hungry/thought-hungry2.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry3.png", "assets/images/Animations2/Hungry/thought-hungry3.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry4.png", "assets/images/Animations2/Hungry/thought-hungry4.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry4.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Hungry/thought-hungry5.png", "assets/images/Animations2/Hungry/thought-hungry5.png");
-		type.set ("assets/images/Animations2/Hungry/thought-hungry5.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop1-sheet.png", "assets/images/Animations2/Poop/thought-poop1-sheet.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop1.png", "assets/images/Animations2/Poop/thought-poop1.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop2.png", "assets/images/Animations2/Poop/thought-poop2.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop3.png", "assets/images/Animations2/Poop/thought-poop3.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop4.png", "assets/images/Animations2/Poop/thought-poop4.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop4.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Poop/thought-poop5.png", "assets/images/Animations2/Poop/thought-poop5.png");
-		type.set ("assets/images/Animations2/Poop/thought-poop5.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep1-sheet.png", "assets/images/Animations2/Sleepy/thought-sleep1-sheet.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep1-sheet.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep1.png", "assets/images/Animations2/Sleepy/thought-sleep1.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep1.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep2.png", "assets/images/Animations2/Sleepy/thought-sleep2.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep2.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep3.png", "assets/images/Animations2/Sleepy/thought-sleep3.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep3.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep4.png", "assets/images/Animations2/Sleepy/thought-sleep4.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep4.png", AssetType.IMAGE);
-		path.set ("assets/images/Animations2/Sleepy/thought-sleep5.png", "assets/images/Animations2/Sleepy/thought-sleep5.png");
-		type.set ("assets/images/Animations2/Sleepy/thought-sleep5.png", AssetType.IMAGE);
 		path.set ("assets/images/background.png", "assets/images/background.png");
 		type.set ("assets/images/background.png", AssetType.IMAGE);
 		path.set ("assets/images/Cheer.png", "assets/images/Cheer.png");
@@ -935,16 +674,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/Rest_old.png", AssetType.IMAGE);
 		path.set ("assets/images/Scold.png", "assets/images/Scold.png");
 		type.set ("assets/images/Scold.png", AssetType.IMAGE);
-		path.set ("assets/images/Study.png", "assets/images/Study.png");
-		type.set ("assets/images/Study.png", AssetType.IMAGE);
 		path.set ("assets/images/tmp20.png", "assets/images/tmp20.png");
 		type.set ("assets/images/tmp20.png", AssetType.IMAGE);
-		path.set ("assets/images/tmp24.png", "assets/images/tmp24.png");
-		type.set ("assets/images/tmp24.png", AssetType.IMAGE);
 		path.set ("assets/images/tmp32.png", "assets/images/tmp32.png");
 		type.set ("assets/images/tmp32.png", AssetType.IMAGE);
 		path.set ("assets/images/tmpSelect.png", "assets/images/tmpSelect.png");
 		type.set ("assets/images/tmpSelect.png", AssetType.IMAGE);
+		path.set ("assets/images/Train.png", "assets/images/Train.png");
+		type.set ("assets/images/Train.png", AssetType.IMAGE);
 		path.set ("assets/images/Wipe.png", "assets/images/Wipe.png");
 		type.set ("assets/images/Wipe.png", AssetType.IMAGE);
 		path.set ("assets/music/music-goes-here.txt", "assets/music/music-goes-here.txt");
@@ -953,8 +690,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/Next.ogg", AssetType.SOUND);
 		path.set ("assets/sounds/Select.ogg", "assets/sounds/Select.ogg");
 		type.set ("assets/sounds/Select.ogg", AssetType.SOUND);
-		path.set ("assets/Thoughts.png", "assets/Thoughts.png");
-		type.set ("assets/Thoughts.png", AssetType.IMAGE);
 		className.set ("flixel/sounds/beep.ogg", __ASSET__flixel_sounds_beep_ogg);
 		type.set ("flixel/sounds/beep.ogg", AssetType.SOUND);
 		className.set ("flixel/sounds/flixel.ogg", __ASSET__flixel_sounds_flixel_ogg);
@@ -970,163 +705,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
-		id = "assets/data/EarlyGameBoy.eot";
-		path.set (id, id);
-		type.set (id, AssetType.BINARY);
-		id = "assets/data/EarlyGameBoy.svg";
-		path.set (id, id);
-		type.set (id, AssetType.TEXT);
 		id = "assets/data/EarlyGameBoy.ttf";
 		path.set (id, id);
 		type.set (id, AssetType.FONT);
-		id = "assets/data/EarlyGameBoy.woff";
-		path.set (id, id);
-		type.set (id, AssetType.BINARY);
 		id = "assets/icon.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Angry/Player-angry1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Angry/Player-angry1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Angry/Player-angry2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Angry/Player-angry3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Ashamed/Player-ashamed1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Ashamed/Player-ashamed1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Ashamed/Player-ashamed2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Ashamed/Player-ashamed3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Excited/Player-exitednew1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Excited/Player-exitednew1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Excited/Player-exitednew2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Excited/Player-exitednew3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood4.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood5.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Happy/Player-1happymood6.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood4.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood5.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Neutral/Player-1neturalmood6.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Sleep/Player-sleep1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Sleep/Player-sleep1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Sleep/Player-sleep2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations/Sleep/Player-sleep3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry4.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Hungry/thought-hungry5.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop4.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Poop/thought-poop5.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep1-sheet.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep1.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep2.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep3.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep4.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Animations2/Sleepy/thought-sleep5.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/background.png";
@@ -1168,19 +750,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/Scold.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/Study.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tmp20.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/tmp24.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tmp32.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/tmpSelect.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Train.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Wipe.png";
@@ -1195,9 +774,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/Select.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
-		id = "assets/Thoughts.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "flixel/sounds/beep.ogg";
 		path.set (id, id);
 		
@@ -1235,62 +811,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
-		useManifest = true;
-		useManifest = true;
 		
 		className.set ("assets/data/EarlyGameBoy.ttf", __ASSET__assets_data_earlygameboy_ttf);
 		type.set ("assets/data/EarlyGameBoy.ttf", AssetType.FONT);
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -2069,59 +1592,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -2131,60 +1601,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 #elseif html5
 
-
-
 @:keep #if display private #end class __ASSET__assets_data_earlygameboy_ttf extends lime.text.Font { public function new () { super (); name = "Early GameBoy Regular"; } } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
