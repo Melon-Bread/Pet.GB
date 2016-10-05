@@ -21,14 +21,15 @@ class Gel extends FlxSprite
 	public var Waste = 0;
 
 	//private var _inEgg:Bool = true;
-	private var _isHungry:Bool = false;
-	private var _wasteReady:Bool = false;
+	public var _isHungry:Bool = false;
+	public var _wasteReady:Bool = false;
 	private var _madeWaste:Bool = false;
-	private var _isTired:Bool = false;
+	public var _isTired:Bool = false;
 	private var _isAsleep:Bool = false;
 
-	// Mood
-	private var _currentMood:Mood = NEUTRAL;
+	// Mood/Needs
+	public var CurrentMood:Mood = HAPPY;
+	public var CurrentNeed:Need = NONE;
 
 	//
 	public var Wait:Bool = false;
@@ -38,27 +39,53 @@ class Gel extends FlxSprite
 		super(X, Y);
 
 		loadGraphic(AssetPaths.Player__png, true, 64, 64);
-		animation.add("neutral", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
-		animation.add("happy", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
-		animation.add("angry", [1, 2, 3, 4, 5, 6, 5, 4, 3, 2], 5, true);
+		animation.add("neutral", [0, 1, 2, 3, 4, 5, 4, 5, 2, 1], 4, true);
+		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 4, true);
+		animation.add("angry", [12, 13, 14, 13], 4, true);
+		animation.add("sleeping", [15, 16, 17, 16], 3, true);
+		animation.add("excited", [18, 19, 20, 19], 5, false);
+		animation.add("ashamed", [21, 22, 23, 22], 5, false);
 
 		// DEBUG
+		FlxG.watch.add(this, "CurrentMood");
+		FlxG.watch.add(this, "CurrentNeed");
+		FlxG.watch.add(this.animation, "curAnim");
 		FlxG.watch.add(this, "Wait");
 		FlxG.watch.add(this, "Happiness");
 		FlxG.watch.add(this, "Discipline");
 		FlxG.watch.add(this, "Fullness");
 	}
 
-	override function update(elsapsed:Float):Void
+	override function update(elapsed:Float):Void
 	{
-		if (animation.curAnim == null)
-			animation.play("neutral");
+		super.update(elapsed);
 
-		super.update(elsapsed);
+		checkMood();
+		checkNeed();
 	}
 
 	private function checkMood():Void
 	{
+		if (Happiness >= 61)
+			CurrentMood = HAPPY;
+		else if (Happiness >= 40 && Happiness <= 60)
+			CurrentMood = NEUTRAL;
+		else if (Happiness <= 39)
+			CurrentMood = ANGRY;
+
+	}
+
+	private function checkNeed():Void
+	{
+		// TODO: Add need flah triggers
+		if (_isHungry)
+			CurrentNeed = HUNGRY;
+		else if (_wasteReady)
+			CurrentNeed = POOPY;
+		else if (_isTired)
+			CurrentNeed = SLEEPY;
+		else
+			CurrentNeed = NONE;
 
 	}
 
@@ -89,7 +116,6 @@ class Gel extends FlxSprite
 
 		Happiness += 10;
 		Discipline -= 10;
-
 		checkRange();
 	}
 
@@ -99,7 +125,7 @@ class Gel extends FlxSprite
 
 		Happiness -= 10;
 		Discipline += 10;
-
+		checkRange();
 	}
 
 	private function checkRange():Void
@@ -126,12 +152,18 @@ enum Mood
 	NEUTRAL;
 	HAPPY;
 	ANGRY;
-	HUNGRY;
-	SLEEPY;
 
 	WASTING;
 	SLEEPING;
 
 	ENCOURAGED;
 	SAD;
+}
+
+enum Need
+{
+	NONE;
+	HUNGRY;
+	SLEEPY;
+	POOPY;
 }
