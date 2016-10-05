@@ -141,7 +141,7 @@ class Gel extends FlxSprite
 			Discipline -=5;
 			Waste +=5;
 		}
-	}x
+	}
 
 	public function Praise():Void
 	{
