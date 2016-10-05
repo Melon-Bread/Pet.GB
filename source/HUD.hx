@@ -8,6 +8,8 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 using flixel.util.FlxSpriteUtil;
 
+
+// TODO: Make sure the HUD is just displaying & triggering Gel stuff
 class HUD extends FlxTypedGroup<FlxSprite>
 {
 	// Top 
@@ -33,7 +35,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private var _sprConfig:FlxSprite;
 
 	// Gel Boxes
-	private var _sprEmotion:FlxSprite;
+	private var _sprThoughts:FlxSprite;
 	private var _sprInteraction:FlxSprite;
 
 	// Sounds
@@ -127,20 +129,28 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprSelect = new FlxSprite(0, 0, AssetPaths.tmpSelect__png);
 		add(_sprSelect);
 
-		// Gel Boxes
-		_sprEmotion = new FlxSprite(26, 51, AssetPaths.tmp24__png);
-		_sprEmotion.visible = false;
-		add(_sprEmotion);
-
+		// Interact Boxes
 		_sprInteraction = new FlxSprite(111, 78, AssetPaths.tmp24__png);
 		_sprInteraction.visible = false;
 		add(_sprInteraction);
+
+		// Thought Box
+		_sprThoughts = new FlxSprite(26, 51);
+		_sprThoughts.loadGraphic(AssetPaths.Thoughts__png, true, 24, 24);
+		_sprThoughts.animation.add("none", [4], 1, false);
+		_sprThoughts.animation.add("hungry", [0, 1, 2, 3, 4], 3, true);
+		_sprThoughts.animation.add("poopy", [5, 6, 7, 8, 9], 3, true);
+		_sprThoughts.animation.add("sleepy", [10, 11, 12, 13, 14], 4, true);
+		//_sprThoughts.visible = false;
+		add(_sprThoughts);
+
 
 		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "", 8);
 		add(_tmpText);
 
 		// DEBUG
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
+		FlxG.watch.add(_sprThoughts.animation, "curAnim");
 		FlxG.watch.add(_sprInteraction, "alpha", "Interact Alpha");
 		FlxG.watch.add(_sprInteraction, "visible", "Interact Visible");
 		FlxG.watch.add(_tmpText, "text", "Temp Text");
@@ -156,7 +166,31 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			nextOption(false);
 		else if (FlxG.keys.justPressed.X) 
 			makeOption(_menuOption);
+		else if (FlxG.keys.justPressed.Q) 
+			_gel._isHungry = !_gel._isHungry;
+		else if (FlxG.keys.justPressed.W) 
+			_gel._wasteReady = !_gel._wasteReady;
+		else if (FlxG.keys.justPressed.E) 
+			_gel._isTired = !_gel._isTired;
 
+
+		_gel.update(elapsed);
+
+		if (_gel.CurrentMood == Gel.Mood.NEUTRAL)
+			_gel.animation.play("neutral", false);
+		else if(_gel.CurrentMood == Gel.Mood.HAPPY)
+			_gel.animation.play("happy", false);
+		else if (_gel.CurrentMood == Gel.Mood.ANGRY)
+			_gel.animation.play("angry", false);
+
+		if (_gel.CurrentNeed == Gel.Need.NONE)
+			_sprThoughts.animation.play("none", false);
+		else if (_gel.CurrentNeed == Gel.Need.HUNGRY)
+			_sprThoughts.animation.play("hungry", false);
+		else if (_gel.CurrentNeed == Gel.Need.POOPY)
+			_sprThoughts.animation.play("poopy", false);
+		else if (_gel.CurrentNeed == Gel.Need.SLEEPY)
+			_sprThoughts.animation.play("sleepy", false);
 	}
 
 
@@ -255,7 +289,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function praiseGel():Void
 	{
-		itemJoin("C");
+		itemJoin("P");
 		_gel.Praise();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
@@ -281,6 +315,10 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_gel.Wait = false;
 	}
 
+	private function showThought():Void
+	{
+
+	}
 }
 
 // TODO: Actually use this instead of _menuChoice
