@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"_is",
+				"_isAsleep"
+			],
+			[
+				"_made",
+				"_madeWaste"
+			],
+			[
+				"waste",
+				"_wasteReady\tBool"
+			],
+			[
+				"_waste",
+				"_madeWaste\tBool"
+			],
+			[
+				"fade",
+				"fadeOut(...)\tflixel.FlxSprite"
+			],
+			[
+				"_sp",
+				"_sprInteraction\tflixel.FlxSprite"
+			],
+			[
+				"check",
+				"checkRange(  )\tVoid"
+			],
+			[
+				"el",
+				"elapsed"
+			],
+			[
+				"_c",
+				"_menuChoice"
+			],
+			[
+				"isT",
+				"_isTired\tBool"
+			],
+			[
+				"CU",
+				"CurrentNeed\tNeed"
+			],
+			[
+				"SLEEP",
+				"SLEEPY\tNeed"
+			],
+			[
+				"_spor",
+				"_sprThoughts\tflixel.FlxSprite"
+			],
+			[
+				"Cure",
+				"CurrentNeed\tNeed"
+			],
+			[
+				"Th",
+				"Thoughts__png\tString"
+			],
+			[
+				"_spr",
+				"_sprThoughts\tflixel.FlxSprite"
+			],
+			[
 				"W",
 				"Wait"
 			],
@@ -24,10 +88,6 @@
 				"true"
 			],
 			[
-				"_spr",
-				"_sprInteraction\tvar"
-			],
-			[
 				"FlxC",
 				"FlxColor\tflixel.util"
 			],
@@ -46,10 +106,6 @@
 			[
 				"_sprIn",
 				"_sprInteraction\tvar"
-			],
-			[
-				"check",
-				"checkRange(  )\tVoid"
 			],
 			[
 				"Max",
@@ -74,14 +130,6 @@
 			[
 				"Con",
 				"Config__png\tString"
-			],
-			[
-				"_sp",
-				"_sprGel\tGel"
-			],
-			[
-				"el",
-				"elsapsed"
 			],
 			[
 				"E",
@@ -340,15 +388,6 @@
 	"buffers":
 	[
 		{
-			"file": "source/MenuState.hx",
-			"settings":
-			{
-				"buffer_size": 1660,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "source/PlayState.hx",
 			"settings":
 			{
@@ -358,10 +397,19 @@
 			}
 		},
 		{
+			"file": "source/MenuState.hx",
+			"settings":
+			{
+				"buffer_size": 1699,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "source/HUD.hx",
 			"settings":
 			{
-				"buffer_size": 7233,
+				"buffer_size": 8501,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -370,16 +418,16 @@
 			"file": "source/Gel.hx",
 			"settings":
 			{
-				"buffer_size": 2848,
+				"buffer_size": 5479,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "GelNotes.md",
+			"file": "source/Clock.hx",
 			"settings":
 			{
-				"buffer_size": 4200,
+				"buffer_size": 851,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -392,10 +440,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 357.0,
-		"last_filter": "mark",
+		"height": 243.0,
+		"last_filter": "instal",
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"im",
+				"Haxe: Organize Imports"
+			],
+			[
+				"i",
+				"Haxe: Organize Imports"
+			],
 			[
 				"mark",
 				"Markdown Preview: Export HTML in Sublime Text"
@@ -445,10 +505,6 @@
 				"Haxe: Organize Imports"
 			],
 			[
-				"im",
-				"Haxe: Organize Imports"
-			],
-			[
 				"git",
 				"Git: Init"
 			],
@@ -489,10 +545,6 @@
 				"Boxy Theme: Activation"
 			],
 			[
-				"i",
-				"Haxe: Organize Imports"
-			],
-			[
 				"hexe",
 				"Haxe: Organize Imports"
 			],
@@ -529,10 +581,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"instal",
-				"Package Control: Install Package"
-			],
-			[
 				"git p",
 				"Git: Push"
 			],
@@ -545,7 +593,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 380.0
+		"width": 414.0
 	},
 	"console":
 	{
@@ -567,12 +615,16 @@
 	"expanded_folders":
 	[
 		"/C/Users/melon/Documents/Projects/Pet.GB",
-		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp"
+		"/C/Users/melon/Documents/Projects/Pet.GB/assets",
+		"/C/Users/melon/Documents/Projects/Pet.GB/source"
 	],
 	"file_history":
 	[
-		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp/GelNotes.html",
+		"/C/Users/melon/Documents/Projects/Pet.GB/source/MenuState.hx",
+		"/C/Users/melon/Documents/Projects/Pet.GB/Project.xml",
 		"/C/Users/melon/Documents/Projects/Pet.GB/GelNotes.md",
+		"/C/Users/melon/Documents/Projects/Pet.GB/source/Gel.hx",
+		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp/GelNotes.html",
 		"/C/Users/melon/Documents/Projects/Pet.GB/_tmp/MoodNotes.md",
 		"/C/HaxeToolkit/haxe/lib/flixel/4,1,1/flixel/text/FlxBitmapText.hx",
 		"/C/Users/melon/AppData/Roaming/Sublime Text 3/Packages/TodoReview/TodoReview.sublime-settings",
@@ -695,10 +747,7 @@
 		"/C/Users/melon/Downloads/vpk-tmp/MGBA00001/sce_sys/param.sfo",
 		"/C/Users/melon/Programs/Ice/emulators.txt",
 		"/C/Users/melon/Programs/Ice/consoles.txt",
-		"/C/Users/melon/Programs/Ice/config.txt",
-		"/C/Users/melon/Desktop/RAVBA/vbam.ini",
-		"/C/Users/melon/Downloads/Turn_Off_Fast_Startup.bat",
-		"/C/Users/melon/Downloads/RAVBA/vbam.ini"
+		"/C/Users/melon/Programs/Ice/config.txt"
 	],
 	"find":
 	{
@@ -716,6 +765,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"madwa",
+			"elsapsed",
 			"/l6",
 			"/16",
 			"body",
@@ -758,6 +809,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"elapsed",
 			"",
 			"Study",
 			"",
@@ -790,36 +842,6 @@
 			[
 				{
 					"buffer": 0,
-					"file": "source/MenuState.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1660,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								909,
-								909
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 213.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "source/PlayState.hx",
 					"semi_transient": false,
 					"settings":
@@ -837,6 +859,80 @@
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
 							"haxe-build-id": 0,
 							"syntax": "Packages/Haxe/Haxe.tmLanguage",
 							"translate_tabs_to_spaces": false
@@ -849,30 +945,238 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "source/HUD.hx",
+					"buffer": 1,
+					"file": "source/MenuState.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7233,
+						"buffer_size": 1699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6752,
-								6752
+								1358,
+								1358
 							]
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1697,
+										1698
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										241,
+										242
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
 							"haxe-build-id": 0,
 							"syntax": "Packages/Haxe/Haxe.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1290.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/HUD.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3553,
+								3553
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3561,
+										3562
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3527,
+										3528
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1160.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -884,25 +1188,104 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2848,
+						"buffer_size": 5479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2227,
-								2227
+								2892,
+								2892
 							]
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										5357,
+										5358
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
 							"haxe-build-id": 0,
 							"syntax": "Packages/Haxe/Haxe.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 886.0,
+						"translation.y": 579.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -916,33 +1299,120 @@
 			[
 				{
 					"buffer": 4,
-					"file": "GelNotes.md",
+					"file": "source/Clock.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4200,
+						"buffer_size": 851,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1084,
-								1084
+								577,
+								624
 							]
 						],
 						"settings":
 						{
-							"parser": "markdown",
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"target": "sublime",
-							"translate_tabs_to_spaces": false
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										850,
+										851
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										72,
+										73
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1249.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -976,7 +1446,7 @@
 		"cols":
 		[
 			0.0,
-			0.559843885516,
+			0.683596500179,
 			1.0
 		],
 		"rows":
@@ -988,7 +1458,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 88.0
+		"height": 106.0
 	},
 	"output.find_results":
 	{
@@ -1032,7 +1502,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
