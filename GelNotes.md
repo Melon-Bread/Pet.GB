@@ -163,12 +163,14 @@
 	* Puts player in Sleeping Mood
 		* Last 6-9 hours (random, may make discipline be a factor)
 		* Can only view INFO & CONF
-		* Happiness change determined by level
-			* HAPPY = Happiness - 15;
-			* NEUTRAL = Happiness +10
-			* ANGRY = Happiness +10;
-		* Fullness -50;
-		* Sleepiness =0;
+		* Stat changes on wake up
+            * Happiness change determined by level
+                * HAPPY = Happiness - 15;
+                * NEUTRAL = Happiness +10
+                * ANGRY = Happiness +10;
+            * Fullness -50;
+            * Sleepiness =0;
+            * Waste += 10;
 
 ###CHEER:
 	* Happiness +10

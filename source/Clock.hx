@@ -4,8 +4,6 @@ import flixel.FlxG;
 import flixel.util.FlxTimer;
 
 class Clock {
-	
-	private var _hours:Int = 0;
 	private var _timer:FlxTimer;
 
 	public var HourPassed:Bool = false;
@@ -19,7 +17,7 @@ class Clock {
 
 		// DEBUG
 		FlxG.watch.add(_timer, "progress", "Day Completion:");
-		FlxG.watch.add(_timer, "loopsLeft","Hours Left:");
+		FlxG.watch.add(_timer, "loopsLeft","Hour:");
 	}
 
 	public function update():Void

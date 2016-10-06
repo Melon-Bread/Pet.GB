@@ -11,6 +11,7 @@ using flixel.util.FlxSpriteUtil;
 
 
 // TODO: Make sure the HUD is just displaying & triggering Gel stuff
+// TODO: Display in-game time
 class HUD extends FlxTypedGroup<FlxSprite>
 {
 	// Top 
@@ -178,6 +179,8 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			_gel.animation.play("happy", false);
 		else if (_gel.CurrentMood == Gel.Mood.ANGRY)
 			_gel.animation.play("angry", false);
+		else if (_gel.CurrentMood == Gel.Mood.SLEEPING)
+			_gel.animation.play("sleeping", false);
 
 		if (_gel.CurrentNeed == Gel.Need.NONE)
 			_sprThoughts.animation.play("none", false);
@@ -246,27 +249,33 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 				// FEED
 				case 1:
-					feedGel();
+					if (!_gel._isAsleep)
+						feedGel();
 
-				// TRAIN
+				// Study
 				case 2:
-					studyGel();
+					if (!_gel._isAsleep)
+						studyGel();
 
 				// REST
 				case 3:
-					sleepGel();
+					if (!_gel._isAsleep)
+						sleepGel();
 
 				// CHEER
 				case 4:
-					praiseGel();
+					if (!_gel._isAsleep)
+						praiseGel();
 
 				// SCOLD
 				case 5:
-					scoldGel();
+					if (!_gel._isAsleep)
+						scoldGel();
 
 				// WIPE
 				case 6:
-					wipeGel();
+					if (!_gel._isAsleep)
+						wipeGel();
 
 				// CONFIG
 				case 7:
@@ -293,7 +302,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function sleepGel():Void
 	{
-		itemJoin("S");
+		itemJoin("R");
 		_gel.Sleep();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}

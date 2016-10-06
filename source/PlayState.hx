@@ -3,9 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.ui.FlxButton;
-import flixel.math.FlxMath;
+import flixel.system.debug.FlxDebugger;
 
 class PlayState extends FlxState
 {
@@ -14,6 +12,9 @@ class PlayState extends FlxState
 	private var _gelPet:Gel;
 
 	private var _hud:HUD;
+
+	// DEBUG
+	FlxG.debugger.setLayout(FlxDebuggerLayout.RIGHT);
 
 	override public function create():Void
 	{

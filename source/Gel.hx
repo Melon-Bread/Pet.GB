@@ -28,14 +28,16 @@ class Gel extends FlxSprite
 	public var _isAsleep:Bool = false;
 
 	// Menu Locks
+	public var Wait:Bool = false;
 	private var _hasStudied:Bool = false;
 
 	// Mood/Needs
 	public var CurrentMood:Mood = NEUTRAL;
 	public var CurrentNeed:Need = NONE;
 
-	//
-	public var Wait:Bool = false;
+	// Sleep Timer
+	private var _hoursAsleep:Int = 0;
+	
 
 	// Gels internal clock
 	private var _clock:Clock;
@@ -71,6 +73,7 @@ class Gel extends FlxSprite
 		FlxG.watch.add(this, "Sleepiness");
 		FlxG.watch.add(this, "_isTired");
 		FlxG.watch.add(this, "_isAsleep");
+		FlxG.watch.add(this, "_hoursAsleep");
 	}
 
 	override function update(elapsed:Float):Void
@@ -90,12 +93,17 @@ class Gel extends FlxSprite
 
 	private function checkMood():Void
 	{
-		if (Happiness >= 61)
-			CurrentMood = HAPPY;
-		else if (Happiness >= 40 && Happiness <= 60)
-			CurrentMood = NEUTRAL;
-		else if (Happiness <= 39)
-			CurrentMood = ANGRY;
+		if (_isAsleep)
+			CurrentMood == SLEEPING;
+		else 
+		{
+			if (Happiness >= 61)
+				CurrentMood = HAPPY;
+			else if (Happiness >= 40 && Happiness <= 60)
+				CurrentMood = NEUTRAL;
+			else if (Happiness <= 39)
+				CurrentMood = ANGRY;
+		}
 	}
 
 	private function checkNeed():Void
@@ -109,14 +117,20 @@ class Gel extends FlxSprite
 			_isHungry = false;
 
 		// Waste Check
-		if(Waste > 75 && Waste < 100)
+		if (Waste > 75 && Waste < 100)
 			_wasteReady = true;
 		else if (Waste >= 100)
 			makeWaste();
 		else
 			_wasteReady = false;
 
+		// Sleepy Check
+		if (Sleepiness >= 90)
+			_isTired = true;
+		else
+			_isTired = false;
 
+		// Sets active needs
 		if (_isHungry)
 			CurrentNeed = HUNGRY;
 		else if (_wasteReady)
@@ -127,7 +141,6 @@ class Gel extends FlxSprite
 			CurrentNeed = NONE;
 	}
 
-
 	public function EatFood():Void
 	{
 		Wait = true;
@@ -136,14 +149,14 @@ class Gel extends FlxSprite
 		if ((Fullness + 25) > 100)
 		{
 			Happiness -= 5; // Unhappy from over feeding
+			Discipline -= 5;
 			// TODO: Play ashamed animationx
-			// TODO:  Add another penelty
 		}
 		else
 		{
 			Fullness += 25;
 			Happiness += 10;
-			Discipline -=5;
+			//Discipline -=5;
 			Waste +=5;
 		}
 	}
@@ -155,6 +168,7 @@ class Gel extends FlxSprite
 		{
 			Intellect++;
 			Happiness -= 5;
+			Fullness -= 5;
 			Sleepiness += 15;
 		}
 		_hasStudied = true;
@@ -162,7 +176,17 @@ class Gel extends FlxSprite
 
 	public function Sleep():Void
 	{
-
+		if (!_isTired)
+		{
+			Happiness -= 5;
+			// TODO: Play ashamed animation
+		}
+		else
+		{
+			_isAsleep = true;
+			_isTired = false;
+			Sleepiness = 0;
+		}
 	}
 
 	public function Praise():Void
@@ -228,27 +252,63 @@ class Gel extends FlxSprite
 		_madeWaste = true;
 		_wasteReady = false;
 	}
+
+	private function wakeUp():Void
+	{
+		_isAsleep = false;
+		_hoursAsleep = 0;
+
+		// Reset back to one of the 3 normal moods
+		checkMood();
+		if (CurrentMood == Mood.HAPPY)
+			Happiness -= 15;
+		else if (CurrentMood == Mood.NEUTRAL)
+			Happiness += 10;
+		else if (CurrentMood == Mood.ANGRY)
+			Happiness += 15;
+
+		Fullness -= 50;
+		Waste += 10;
+
+		checkRange();
+	}
+
 	private function newHour():Void
 	{
-		Fullness -= 10;
-		Sleepiness += 5;
-		if (!_madeWaste)
-			Waste += (FlxG.random.int(2, 5) * 5);
-		
-		// TODO: Add other stat changing conditions
-		if (_isHungry)
-			Happiness -= 10;
-		if (_isTired)
+		if (!_isAsleep)
 		{
-			Happiness -= 10;
-			Discipline -= 5;
+			Fullness -= 10;
+			Sleepiness += 5;
+			if (!_madeWaste)
+				Waste += (FlxG.random.int(2, 5) * 5);
+			
+			// TODO: Add other stat changing conditions
+			if (_isHungry)
+				Happiness -= 10;
+			if (_isTired)
+			{
+				Happiness -= 10;
+				Discipline -= 5;
+			}
+			if (_madeWaste)
+			{
+				Happiness -=10;
+				Discipline -=10;
+			}
 		}
-		if (_madeWaste)
+		else 
 		{
-			Happiness -=10;
-			Discipline -=10;
+			if (_hoursAsleep >= 9)
+				wakeUp();
+			else if (_hoursAsleep > 5 && _hoursAsleep < 9)
+			{
+				// Discipline determines chance of early wake up
+				if (FlxG.random.bool(Discipline))
+					wakeUp();
+			}
+			else
+				_hoursAsleep++;
 		}
-
 		// Unlock menu options
 		_hasStudied = false;
 
