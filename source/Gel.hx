@@ -27,6 +27,9 @@ class Gel extends FlxSprite
 	public var _isTired:Bool = false;
 	public var _isAsleep:Bool = false;
 
+	// Menu Locks
+	private var _hasStudied:Bool = false;
+
 	// Mood/Needs
 	public var CurrentMood:Mood = NEUTRAL;
 	public var CurrentNeed:Need = NONE;
@@ -56,6 +59,8 @@ class Gel extends FlxSprite
 		FlxG.watch.add(this, "CurrentMood");
 		FlxG.watch.add(this, "CurrentNeed");
 		FlxG.watch.add(this, "Wait");
+		FlxG.watch.add(this, "Intellect");
+		FlxG.watch.add(this, "_hasStudied");
 		FlxG.watch.add(this, "Happiness");
 		FlxG.watch.add(this, "Discipline");
 		FlxG.watch.add(this, "Fullness");
@@ -143,6 +148,23 @@ class Gel extends FlxSprite
 		}
 	}
 
+	public function Study():Void
+	{
+		// TODO: Add study faliure chance
+		if (!_hasStudied)
+		{
+			Intellect++;
+			Happiness -= 5;
+			Sleepiness += 15;
+		}
+		_hasStudied = true;
+	}
+
+	public function Sleep():Void
+	{
+
+	}
+
 	public function Praise():Void
 	{
 		Wait = true;
@@ -227,8 +249,9 @@ class Gel extends FlxSprite
 			Discipline -=10;
 		}
 
+		// Unlock menu options
+		_hasStudied = false;
 
-		// TODO: Unlock Wipe
 		_clock.HourPassed = false;
 	}
 

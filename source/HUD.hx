@@ -162,6 +162,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 		// TODO: Add WASD support?
 		// TODO: Add vertical menu movent
+		// TODO: Start + Select gives prompt to delete save file
 		if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
 			nextOption(true);
 		else if (FlxG.keys.justPressed.LEFT || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
@@ -249,11 +250,11 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 				// TRAIN
 				case 2:
-					//
+					studyGel();
 
 				// REST
 				case 3:
-					//
+					sleepGel();
 
 				// CHEER
 				case 4:
@@ -280,6 +281,20 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		itemJoin("F");
 		_gel.EatFood();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function studyGel():Void
+	{
+		itemJoin("T");
+		_gel.Study();
+		_sprInteraction.fadeOut(2, itemLeave);
+	}	
+
+	private function sleepGel():Void
+	{
+		itemJoin("S");
+		_gel.Sleep();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
