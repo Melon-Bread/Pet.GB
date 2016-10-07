@@ -3,13 +3,14 @@ package;
 import flixel.FlxG;
 import flixel.util.FlxTimer;
 
-class Clock {
+class Clock 
+{
 	private var _timer:FlxTimer;
 
 	public var HourPassed:Bool = false;
 	public var DayPassed:Bool = false;
 
-	public function new(RtG:Int = 20):Void //120
+	public function new(RtG:Int = 20) //120
 	{
 		_timer = new FlxTimer();
 		// Every 3 real-time minutes 1 in-game hour passes
@@ -35,5 +36,17 @@ class Clock {
 	{
 		_timer.reset();
 		DayPassed = true;
+	}
+
+	public function pause(isPaused:Bool = true):Void
+	{
+		if (isPaused)
+		{
+			_timer.active = false;
+		}
+		else
+		{
+			_timer.active = true;
+		}
 	}
 }

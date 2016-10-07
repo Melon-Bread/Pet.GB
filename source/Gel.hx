@@ -10,7 +10,7 @@ class Gel extends FlxSprite
 	private var MAX_LEVEL(default, never):Int = 100;
 
 	// Usless Stats that have no pupose yet
-	public var Intellect:Int = 1; // had to be somewhat smart to get out of the egg
+	public var Intellect:Int = 1; // Had to be somewhat smart to get out of the egg
 	public var Age:Int = 1;
 
 	// Mood Modifiers
@@ -40,7 +40,7 @@ class Gel extends FlxSprite
 	
 
 	// Gels internal clock
-	private var _clock:Clock;
+	public var _clock:Clock;
 
 	public function new(?X:Float=0, ?Y:Float=0)
 	{
