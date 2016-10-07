@@ -13,8 +13,6 @@ class PlayState extends FlxState
 
 	private var _hud:HUD;
 
-	// DEBUG
-	FlxG.debugger.setLayout(FlxDebuggerLayout.RIGHT);
 
 	override public function create():Void
 	{
@@ -30,6 +28,9 @@ class PlayState extends FlxState
 		add(_hud);
 
 		super.create();
+		
+		// DEBUG
+		FlxG.debugger.setLayout(FlxDebuggerLayout.RIGHT);
 	}
 
 	override public function update(elapsed:Float):Void
