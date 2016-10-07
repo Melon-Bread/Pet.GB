@@ -28,13 +28,11 @@ class Clock {
 
 	private function hourEnd(Timer:FlxTimer):Void
 	{
-		// TODO: alert the Gel a hour has passed make it do its stat changes
 		HourPassed = true;
 	}
 
 	private function dayEnd():Void
 	{
-		// TODO: alert the Gel a day has passed to age++
 		_timer.reset();
 		DayPassed = true;
 	}
