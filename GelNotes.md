@@ -130,10 +130,10 @@
 
 ###INFO:
 	* Displays basic info on the gel
-		* Age (HoursPassed/24)
-		* Happiness (percent)
-		* Discipline (percent)
-		* Current Hour (out of 24);
+		* AGE (Age)
+		* INT (Intellect)
+		* HAP(Happiness percent)
+		* DIS (percent)
 	* Many stats are hidden
 		* Fullness
 		* Waste
