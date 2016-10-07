@@ -13,6 +13,8 @@ class PlayState extends FlxState
 
 	private var _hud:HUD;
 
+	private var _infoMenu:InfoMenu;
+
 
 	override public function create():Void
 	{
@@ -24,8 +26,11 @@ class PlayState extends FlxState
 		_gelPet.y = ((FlxG.height/2) - (_gelPet.height/2));
 		add(_gelPet);
 
-		_hud = new HUD(_gelPet);
+		// Interface
+		_infoMenu = new InfoMenu(_gelPet);
+		_hud = new HUD(_gelPet, _infoMenu);
 		add(_hud);
+		add(_infoMenu);
 
 		super.create();
 		
@@ -36,5 +41,17 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		if (_infoMenu.visible)
+		{
+			_gelPet.active = false;
+			_gelPet._clock.pause(true);
+			_hud.active = false;
+		}
+		else
+		{
+			_gelPet.active = true;
+			_gelPet._clock.pause(false);
+			_hud.active = true;
+		}
 	}
 }

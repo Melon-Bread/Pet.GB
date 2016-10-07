@@ -1,17 +1,18 @@
 package;
 
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import flixel.input.gamepad.FlxGamepad;
 using flixel.util.FlxSpriteUtil;
 
 
 // TODO: Make sure the HUD is just displaying & triggering Gel stuff
 // TODO: Display in-game time
+// TODO: Save system that saves every menu choice
 class HUD extends FlxTypedGroup<FlxSprite>
 {
 	// Top 
@@ -44,6 +45,9 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private var _sndSelect:FlxSound;
 	private var _sndNext:FlxSound;
 
+	// Menus
+	private var _infoMenu:InfoMenu;
+
 	// Misc
 	private var _menuOption:Int;
 	private var _sprSelect:FlxSprite;
@@ -51,13 +55,14 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private var _gel:Gel;
 	
-	public function new(g:Gel)
+	public function new(gel:Gel, infoMenu:InfoMenu)
 	{
 		super();
 
 		// Misc
 		_menuOption = 0;
-		_gel = g;
+		_gel = gel;
+		_infoMenu = infoMenu;
 
 		// Top
 		_sprTop = new FlxSprite(0, 0, AssetPaths.HUD_Background__png);
@@ -143,14 +148,15 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprThoughts.animation.add("hungry", [0, 1, 2, 3, 4], 3, true);
 		_sprThoughts.animation.add("poopy", [5, 6, 7, 8, 9], 3, true);
 		_sprThoughts.animation.add("sleepy", [10, 11, 12, 13, 14], 4, true);
-		//_sprThoughts.visible = false;
 		add(_sprThoughts);
 
 
+		// KILL ME PLEASE
 		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "", 8);
 		add(_tmpText);
 
 		// DEBUG
+		FlxG.watch.add(_infoMenu, "exists", "Info Menu Open");
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
 		FlxG.watch.add(_sprInteraction, "alpha", "Interact Alpha");
 		FlxG.watch.add(_sprInteraction, "visible", "Interact Visible");
@@ -161,6 +167,9 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		super.update(elapsed);
 
+		// If a menu is open do not let the rest of the game update
+
+
 		// TODO: Add WASD support?
 		// TODO: Add vertical menu movent
 		// TODO: Start + Select gives prompt to delete save file
@@ -170,8 +179,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			nextOption(false);
 		else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
 			makeOption(_menuOption);
-
-		_gel.update(elapsed);
 
 		// Gel Animation
 		if (_gel.CurrentMood == Gel.Mood.NEUTRAL)
@@ -247,7 +254,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			{
 				// INFO
 				case 0:
-				//
+					showInfo();
 
 				// FEED
 				case 1:
@@ -281,11 +288,16 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 				// CONFIG
 				case 7:
-					//
+					showConfig();
 			}
 			_sndSelect.play(true);
 		}
 
+	}
+
+	private function showInfo():Void
+	{
+		_infoMenu.OpenMenu();
 	}
 
 	private function feedGel():Void
@@ -328,6 +340,11 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		itemJoin("W");
 		_gel.Wipe();
 		_sprInteraction.fadeOut(2, itemLeave);
+	}
+
+	private function showConfig():Void
+	{
+
 	}
 
 	private function itemJoin(letter:String = ""):Void
