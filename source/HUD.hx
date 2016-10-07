@@ -167,16 +167,16 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		super.update(elapsed);
 
-		// If a menu is open do not let the rest of the game update
-
-
 		// TODO: Add WASD support?
-		// TODO: Add vertical menu movent
 		// TODO: Start + Select gives prompt to delete save file
-		if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
-			nextOption(true);
+		if (FlxG.keys.justPressed.UP || FlxG.gamepads.anyJustPressed(DPAD_UP))
+			nextOption(UP);
+		else if (FlxG.keys.justPressed.DOWN || FlxG.gamepads.anyJustPressed(DPAD_DOWN))
+			nextOption(DOWN);
 		else if (FlxG.keys.justPressed.LEFT || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
-			nextOption(false);
+			nextOption(LEFT);
+		else if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
+			nextOption(RIGHT);
 		else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
 			makeOption(_menuOption);
 
@@ -202,49 +202,62 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	}
 
 
-	private function nextOption(increment:Bool):Void
+	private function nextOption(direction:MenuDirection):Void
 	{
-		// TODO: Add vertical menu movent
-		if (increment)
+		// TODO: Fix double tap in same vert direction
+		switch (direction)
 		{
-			if (_menuOption >= 7)
-				_menuOption = 0;
-			else
-				_menuOption++;
-
-			if (_menuOption >= 4)
-			{
-				_sprSelect.x = (_menuOption - 4) * 40;
-				_sprSelect.y = _sprBottom.y;
-			}
-			else
-			{
+			case UP:
+				_menuOption -= 4;
+				if (_menuOption < 0)
+					_menuOption = 0;
 				_sprSelect.x = _menuOption * 40;
 				_sprSelect.y = 0;
-			}
 
-		}
-		else
-		{
-			if (_menuOption <= 0)
-				_menuOption = 7;
-			else
-				_menuOption--;
-
-			if (_menuOption >= 4)
-			{
+			case DOWN:
+				_menuOption += 4;
+				if (_menuOption > 7)
+					_menuOption = 7;
 				_sprSelect.x = (_menuOption - 4) * 40;
 				_sprSelect.y = _sprBottom.y;
-			}
-			else
-			{
-				_sprSelect.x = _menuOption * 40;
-				_sprSelect.y = 0;
-			}
 
-		}
+			case LEFT:		
+				if (_menuOption <= 0)
+					_menuOption = 7;
+				else
+					_menuOption--;
+
+				if (_menuOption >= 4)
+				{
+					_sprSelect.x = (_menuOption - 4) * 40;
+					_sprSelect.y = _sprBottom.y;
+				}
+				else
+				{
+					_sprSelect.x = _menuOption * 40;
+					_sprSelect.y = 0;
+				}
+
+			case RIGHT:
+				if (_menuOption >= 7)
+					_menuOption = 0;
+				else
+					_menuOption++;
+
+				if (_menuOption >= 4)
+				{
+					_sprSelect.x = (_menuOption - 4) * 40;
+					_sprSelect.y = _sprBottom.y;
+				}
+				else
+				{
+					_sprSelect.x = _menuOption * 40;
+					_sprSelect.y = 0;
+				}
+
 		_sndNext.play(true);
 	}
+}
 
 	private function makeOption(option:Int):Void
 	{
@@ -291,6 +304,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 					showConfig();
 			}
 			_sndSelect.play(true);
+			// TODO: Save Game
 		}
 
 	}
@@ -361,6 +375,10 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_gel.Wait = false;
 	}
 
+	public function SaveGame()
+	{
+		
+	}
 }
 
 // TODO: Actually use this instead of _menuChoice
@@ -374,4 +392,12 @@ enum MenuOption
 	SCOLD;
 	WIPE;
 	CONFIG;
+}
+
+private enum MenuDirection
+{
+	UP;
+	DOWN;
+	LEFT;
+	RIGHT;
 }

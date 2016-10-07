@@ -47,12 +47,12 @@ class Gel extends FlxSprite
 		super(X, Y);
 
 		loadGraphic(AssetPaths.Player__png, true, 64, 64);
-		animation.add("neutral", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 2, true);
-		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 2, true);
-		animation.add("angry", [12, 13, 14, 13], 2, true);
-		animation.add("sleeping", [15, 16, 17, 16], 1, true);
-		animation.add("excited", [18, 19, 20, 19], 3, false);
-		animation.add("ashamed", [21, 22, 23, 22], 3, false);
+		animation.add("neutral", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 5, true);
+		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 5 true);
+		animation.add("angry", [12, 13, 14, 13], 5, true);
+		animation.add("sleeping", [15, 16, 17, 16], 3, true);
+		animation.add("excited", [18, 19, 20, 19], 6, false);
+		animation.add("ashamed", [21, 22, 23, 22], 4, false);
 
 		_clock = new Clock();
 

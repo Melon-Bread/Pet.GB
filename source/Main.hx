@@ -1,7 +1,8 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxGame;
-import openfl.Lib;
+import flixel.util.FlxSave;
 import openfl.display.Sprite;
 
 class Main extends Sprite
@@ -9,7 +10,21 @@ class Main extends Sprite
 
 	public function new()
 	{
+		// SAVE BEGIN
+		var _save = new FlxSave();
+		_save.bind("Pet.GB");
+
 		super();
 		addChild(new FlxGame(0, 0, MenuState));
+
+		// Loads volume if exists
+		if (_save.data.volume != null)
+			FlxG.sound.volume = _save.data.volume;
+		// Set save data volume to default (100%)
+		else
+			_save.data.volume = FlxG.sound.volume;
+
+		// SAVE END
+		_save.close();
 	}
 }

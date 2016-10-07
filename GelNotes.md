@@ -202,4 +202,5 @@
 		* SE Volume
 		* Switch controls between Arrows (defualt) or WASD
 		* Brightness?
+		* Cancel (Exits menu without saving)
 	* Pauses timer when viewing
