@@ -11,7 +11,7 @@ class Gel extends FlxSprite
 
 	// Usless Stats that have no pupose yet
 	public var Intellect:Int = 1; // had to be somewhat smart to get out of the egg
-	public var Age:Int = 0;
+	public var Age:Int = 1;
 
 	// Mood Modifiers
 	public var Happiness:Int = 50;
@@ -95,9 +95,7 @@ class Gel extends FlxSprite
 	private function checkMood():Void
 	{
 		if (_isAsleep)
-		{
 			CurrentMood = SLEEPING;
-		}
 		else 
 		{
 			if (Happiness >= 61)
@@ -167,15 +165,24 @@ class Gel extends FlxSprite
 
 	public function Study():Void
 	{
-		// TODO: Add study faliure chance
-		// TODO: Add Age bonus
-		if (!_hasStudied)
+		var _ageBonus:Float = Age/4;
+
+		if (FlxG.random.bool(Discipline))
 		{
-			Intellect++;
-			Happiness -= 5;
-			Fullness -= 5;
-			Sleepiness += 15;
+			if (!_hasStudied && !_isTired)
+			{
+				Intellect += (1 * (1 + Std.int(_ageBonus)));
+				Happiness -= 5;
+				Fullness -= 5;
+				Sleepiness += 15;
+				// TODO: play ashamed animation
+			}
 		}
+		else
+		{
+			// TODO: Play ashamed animation
+		}
+		// Can only study once per hour, even if check failed
 		_hasStudied = true;
 	}
 
