@@ -50,7 +50,7 @@ class Gel extends FlxSprite
 		animation.add("neutral", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 2, true);
 		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 2, true);
 		animation.add("angry", [12, 13, 14, 13], 2, true);
-		animation.add("sleeping", [15, 16, 17, 16], 2, true);
+		animation.add("sleeping", [15, 16, 17, 16], 1, true);
 		animation.add("excited", [18, 19, 20, 19], 3, false);
 		animation.add("ashamed", [21, 22, 23, 22], 3, false);
 
@@ -60,6 +60,7 @@ class Gel extends FlxSprite
 		FlxG.watch.add(this, "Age");
 		FlxG.watch.add(this, "CurrentMood");
 		FlxG.watch.add(this, "CurrentNeed");
+		FlxG.watch.add(this.animation, "name", "Gel.animation");
 		FlxG.watch.add(this, "Wait");
 		FlxG.watch.add(this, "Intellect");
 		FlxG.watch.add(this, "_hasStudied");
@@ -94,7 +95,9 @@ class Gel extends FlxSprite
 	private function checkMood():Void
 	{
 		if (_isAsleep)
-			CurrentMood == SLEEPING;
+		{
+			CurrentMood = SLEEPING;
+		}
 		else 
 		{
 			if (Happiness >= 61)
@@ -139,6 +142,7 @@ class Gel extends FlxSprite
 			CurrentNeed = SLEEPY;
 		else
 			CurrentNeed = NONE;
+		// TODO: Make/Play alert type sound effect when need change
 	}
 
 	public function EatFood():Void
@@ -164,6 +168,7 @@ class Gel extends FlxSprite
 	public function Study():Void
 	{
 		// TODO: Add study faliure chance
+		// TODO: Add Age bonus
 		if (!_hasStudied)
 		{
 			Intellect++;

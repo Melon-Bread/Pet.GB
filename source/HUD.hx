@@ -173,6 +173,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 		_gel.update(elapsed);
 
+		// Gel Animation
 		if (_gel.CurrentMood == Gel.Mood.NEUTRAL)
 			_gel.animation.play("neutral", false);
 		else if(_gel.CurrentMood == Gel.Mood.HAPPY)
@@ -182,6 +183,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		else if (_gel.CurrentMood == Gel.Mood.SLEEPING)
 			_gel.animation.play("sleeping", false);
 
+		// Need Bubble
 		if (_gel.CurrentNeed == Gel.Need.NONE)
 			_sprThoughts.animation.play("none", false);
 		else if (_gel.CurrentNeed == Gel.Need.HUNGRY)
@@ -342,10 +344,6 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_gel.Wait = false;
 	}
 
-	private function showThought():Void
-	{
-
-	}
 }
 
 // TODO: Actually use this instead of _menuChoice
