@@ -64,13 +64,13 @@ class InfoMenu extends FlxTypedGroup<FlxSprite>
 		
 		visible = true;
 		active = true;
+		updateInfo();
 	}
 
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
 
-		// TODO: When B is pressed fade this menu out
 		if (FlxG.keys.pressed.Z || FlxG.gamepads.anyJustPressed(B))
 			closeMenu();
 	}
@@ -79,5 +79,13 @@ class InfoMenu extends FlxTypedGroup<FlxSprite>
 	{
 		active = false;
 		visible = false;
+	}
+
+	private function updateInfo():Void
+	{
+		_txtAGE.text = "Age:       " + _gel.Age + " Days";
+		_txtINT.text = "Int:       " + _gel.Intellect + " Pts";
+		_txtHAP.text = "HAP:       " + _gel.Happiness + " Pct";
+		_txtDIS.text = "DIS:       " + _gel.Discipline + " Pct";
 	}
 }
