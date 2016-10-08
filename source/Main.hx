@@ -22,7 +22,10 @@ class Main extends Sprite
 			FlxG.sound.volume = _save.data.volume;
 		// Set save data volume to default (100%)
 		else
-			_save.data.volume = FlxG.sound.volume;
+			_save.data.volume = 1;
+
+		// SAVE WRITE
+		_save.flush();
 
 		// SAVE END
 		_save.close();
