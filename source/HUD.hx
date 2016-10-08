@@ -1,17 +1,18 @@
 package;
 
-
+import Gel;
+import Gel;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+
 using flixel.util.FlxSpriteUtil;
 
 
 // TODO: Make sure the HUD is just displaying & triggering Gel stuff
-// TODO: Display in-game time
 // TODO: Save system that saves every menu choice
 class HUD extends FlxTypedGroup<FlxSprite>
 {
@@ -45,23 +46,26 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private var _sndSelect:FlxSound;
 	private var _sndNext:FlxSound;
 
+	// Time Display
+	private var _txtTime:FlxText;
+
 	// Menus
 	private var _infoMenu:InfoMenu;
 
 	// Misc
 	private var _menuOption:Int;
 	private var _sprSelect:FlxSprite;
-	private var _tmpText:FlxText;
-
 	private var _gel:Gel;
+	private var _clock:Clock;
 	
-	public function new(gel:Gel, infoMenu:InfoMenu)
+	public function new(gel:Gel, clock:Clock, infoMenu:InfoMenu)
 	{
 		super();
 
 		// Misc
 		_menuOption = 0;
 		_gel = gel;
+		_clock = clock;
 		_infoMenu = infoMenu;
 
 		// Top
@@ -136,8 +140,14 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprSelect = new FlxSprite(0, 0, AssetPaths.tmpSelect__png);
 		add(_sprSelect);
 
-		// Interact Boxes
-		_sprInteraction = new FlxSprite(111, 78, AssetPaths.tmp24__png);
+		// Interact Box
+		_sprInteraction = new FlxSprite(111, 78);
+		_sprInteraction.loadGraphic(AssetPaths.Interact__png, true, 24, 24);
+		_sprInteraction.animation.add ("none", [4], 1, true);
+		_sprInteraction.animation.add ("waste", [0], 1, true);
+		_sprInteraction.animation.add ("food", [1], 1, true);
+		_sprInteraction.animation.add ("wipe", [2], 1, true);
+		_sprInteraction.animation.add ("book", [3], 1, true);
 		_sprInteraction.visible = false;
 		add(_sprInteraction);
 
@@ -150,17 +160,17 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprThoughts.animation.add("sleepy", [10, 11, 12, 13, 14], 4, true);
 		add(_sprThoughts);
 
-
-		// KILL ME PLEASE
-		_tmpText = new FlxText(_sprInteraction.x, _sprInteraction.y, 0, "", 8);
-		add(_tmpText);
+		// Game Time
+		_txtTime = new FlxText(_sprTop.x, (_sprTop.height), 0, Std.string(_clock.CurrentHour) + ":00");
+		_txtTime.setFormat(AssetPaths.EarlyGameBoy__ttf, 8, FlxColor.fromRGB(8, 24, 32, 0), CENTER);
+		add(_txtTime);
 
 		// DEBUG
 		FlxG.watch.add(_infoMenu, "exists", "Info Menu Open");
 		FlxG.watch.add(this, "_menuOption", "Menu Index");
 		FlxG.watch.add(_sprInteraction, "alpha", "Interact Alpha");
 		FlxG.watch.add(_sprInteraction, "visible", "Interact Visible");
-		FlxG.watch.add(_tmpText, "text", "Temp Text");
+		FlxG.watch.add(_sprInteraction.animation, "name", "Interaction");
 	}
 
 	override public function update(elapsed:Float):Void
@@ -180,6 +190,13 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
 			makeOption(_menuOption);
 
+		// Wasting Check
+		if (_gel._madeWaste == true)
+		{	
+			_sprInteraction.visible = true;
+			_sprInteraction.animation.play("waste", true);
+		}
+
 		// Gel Animation
 		if (_gel.CurrentMood == Gel.Mood.NEUTRAL)
 			_gel.animation.play("neutral", false);
@@ -196,9 +213,16 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		else if (_gel.CurrentNeed == Gel.Need.HUNGRY)
 			_sprThoughts.animation.play("hungry", false);
 		else if (_gel.CurrentNeed == Gel.Need.POOPY)
-			_sprThoughts.animation.play("poopy", false);
+		{
+			// The odds of the Gel willing to communicate its about to make Waste
+			if (FlxG.random.bool((((_gel.Discipline * 3) + _gel.Intellect)) / 4))
+				_sprThoughts.animation.play("poopy", false);
+		}
 		else if (_gel.CurrentNeed == Gel.Need.SLEEPY)
 			_sprThoughts.animation.play("sleepy", false);
+
+		// Update time display
+		_txtTime.text = Std.string(_clock.CurrentHour) + ":00";
 	}
 
 
@@ -254,9 +278,8 @@ class HUD extends FlxTypedGroup<FlxSprite>
 					_sprSelect.x = _menuOption * 40;
 					_sprSelect.y = 0;
 				}
-
-		_sndNext.play(true);
 	}
+	_sndNext.play(true);
 }
 
 	private function makeOption(option:Int):Void
@@ -304,9 +327,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 					showConfig();
 			}
 			_sndSelect.play(true);
-			// TODO: Save Game
 		}
-
 	}
 
 	private function showInfo():Void
@@ -316,82 +337,64 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function feedGel():Void
 	{
-		itemJoin("F");
+		itemJoin("food");
 		_gel.EatFood();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
 	private function studyGel():Void
 	{
-		itemJoin("T");
+		itemJoin("book");
 		_gel.Study();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}	
 
 	private function sleepGel():Void
 	{
-		itemJoin("R");
+		itemJoin("none");
 		_gel.Sleep();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
 	private function praiseGel():Void
 	{
-		itemJoin("P");
+		itemJoin("none");
 		_gel.Praise();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
 	private function scoldGel():Void
 	{
-		itemJoin("S");
+		itemJoin("none");
 		_gel.Scold();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
 	private function wipeGel():Void
 	{
-		itemJoin("W");
+		itemJoin("wipe");
 		_gel.Wipe();
 		_sprInteraction.fadeOut(2, itemLeave);
 	}
 
 	private function showConfig():Void
 	{
-
+		// TODO: Make Config menu and call it here
 	}
 
-	private function itemJoin(letter:String = ""):Void
+	private function itemJoin(animation:String):Void
 	{
 		_sprInteraction.visible = true;
-		_tmpText.text = letter;
+		_sprInteraction.animation.play(animation);
 	}
 
 	private function itemLeave(_):Void
 	{
 		_sprInteraction.visible = false;
-		_tmpText.text = "";
 		_sprInteraction.alpha = 1;
+		_sprInteraction.animation.play("none");
 		_gel.Wait = false;
 	}
-
-	public function SaveGame()
-	{
-		
-	}
-}
-
-// TODO: Actually use this instead of _menuChoice
-enum MenuOption
-{
-	INFO;
-	FEED;
-	STUDY;
-	REST;
-	CHEER;
-	SCOLD;
-	WIPE;
-	CONFIG;
 }
 
 private enum MenuDirection
