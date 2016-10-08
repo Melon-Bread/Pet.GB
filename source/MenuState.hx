@@ -32,6 +32,7 @@ class MenuState extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 
+		// TODO: Animate this
 		_sprEgg =  new FlxSprite(0, 0, AssetPaths.Egg__png);
 		_sprEgg.x = (FlxG.width/2) - (_sprEgg.width/2);
 		_sprEgg.y = (FlxG.height/2) - (_sprEgg.height/2);
@@ -59,6 +60,9 @@ class MenuState extends FlxState
 	private function pressStart():Void
 	{
 		_sndSelect.play(true);
+
+		// TODO: Play Egg cracking animation
+
 		FlxG.camera.fade(FlxColor.fromRGB(136, 192, 112, 0), 0.5, true, function()
 			{
 				FlxG.switchState(new PlayState());
