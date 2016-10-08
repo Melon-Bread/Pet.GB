@@ -42,19 +42,19 @@ class Gel extends FlxSprite
 	// Gels internal clock
 	public var _clock:Clock;
 
-	public function new(?X:Float=0, ?Y:Float=0)
+	public function new(?X:Float=0, ?Y:Float=0, clock:Clock)
 	{
 		super(X, Y);
 
 		loadGraphic(AssetPaths.Player__png, true, 64, 64);
 		animation.add("neutral", [0, 1, 2, 3, 4, 5, 4, 3, 2, 1], 5, true);
-		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 5 true);
+		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 5, true);
 		animation.add("angry", [12, 13, 14, 13], 5, true);
 		animation.add("sleeping", [15, 16, 17, 16], 3, true);
 		animation.add("excited", [18, 19, 20, 19], 6, false);
 		animation.add("ashamed", [21, 22, 23, 22], 4, false);
 
-		_clock = new Clock();
+		_clock = clock;
 
 		// DEBUG
 		FlxG.watch.add(this, "Age");
@@ -109,8 +109,6 @@ class Gel extends FlxSprite
 
 	private function checkNeed():Void
 	{
-		// TODO: Add need stat triggers
-
 		// Fullness Checks
 		if(Fullness < 50)
 			_isHungry = true;
@@ -118,7 +116,7 @@ class Gel extends FlxSprite
 			_isHungry = false;
 
 		// Waste Check
-		if (Waste > 75 && Waste < 100)
+		if (Waste > 85 && Waste < 100)
 			_wasteReady = true;
 		else if (Waste >= 100)
 			makeWaste();
@@ -230,10 +228,9 @@ class Gel extends FlxSprite
 	public function Wipe():Void
 	{
 		Wait = true;
-		// TODO: Lock Wipe down for the rest of hour
-		
+
 		// Early Wipe
-		if (!_wasteReady)
+		if (!_wasteReady && !_madeWaste)
 		{
 			Happiness -=5;
 			// TODO: Pay ashamed animation to show bad wipe
@@ -241,7 +238,7 @@ class Gel extends FlxSprite
 		}
 
 		// Good Wipe
-		if (!_madeWaste)
+		else if (!_madeWaste)
 		{
 			Happiness += 10;
 			Discipline += 10;
@@ -283,6 +280,16 @@ class Gel extends FlxSprite
 		Waste += 10;
 
 		checkRange();
+	}
+
+	private function beExcited():Void
+	{
+
+	}
+
+	private function beAshamed():Void
+	{
+
 	}
 
 	private function newHour():Void
@@ -370,9 +377,8 @@ enum Mood
 	HAPPY;
 	ANGRY;
 	SLEEPING;
-
-	ENCOURAGED;
-	SAD;
+	EXCITED;
+	ASHAMED;
 }
 
 enum Need
