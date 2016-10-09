@@ -45,6 +45,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	// Sounds
 	private var _sndSelect:FlxSound;
 	private var _sndNext:FlxSound;
+	private var _sndThought:FlxSound;
 
 	// Time Display
 	private var _txtTime:FlxText;
@@ -135,6 +136,8 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		// Sound
 		_sndSelect = FlxG.sound.load(AssetPaths.Select__ogg);
 		_sndNext = FlxG.sound.load(AssetPaths.Next__ogg);
+		_sndThought = FlxG.sound.load(AssetPaths.Thought__ogg);
+
 
 		// Menu Selecter
 		_sprSelect = new FlxSprite(0, 0, AssetPaths.tmpSelect__png);
@@ -209,17 +212,17 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 		// Need Bubble
 		if (_gel.CurrentNeed == Gel.Need.NONE)
-			_sprThoughts.animation.play("none", false);
+			showThought("none");
 		else if (_gel.CurrentNeed == Gel.Need.HUNGRY)
-			_sprThoughts.animation.play("hungry", false);
+			showThought("hungry");
 		else if (_gel.CurrentNeed == Gel.Need.POOPY)
 		{
 			// The odds of the Gel willing to communicate its about to make Waste
 			if (FlxG.random.bool((((_gel.Discipline * 3) + _gel.Intellect)) / 4))
-				_sprThoughts.animation.play("poopy", false);
+				showThought("poopy");
 		}
 		else if (_gel.CurrentNeed == Gel.Need.SLEEPY)
-			_sprThoughts.animation.play("sleepy", false);
+			showThought("sleepy");
 
 		// Update time display
 		_txtTime.text = Std.string(_clock.CurrentHour) + ":00";
@@ -380,6 +383,18 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	private function showConfig():Void
 	{
 		// TODO: Make Config menu and call it here
+	}
+
+	private function showThought(thought:String):Void
+	{
+		if (_sprThoughts.animation.name == thought)
+			return;
+		else
+		{
+		_sprThoughts.animation.play(thought, false);
+		if (thought != "none")
+			_sndThought.play(true);
+		}
 	}
 
 	private function itemJoin(animation:String):Void
