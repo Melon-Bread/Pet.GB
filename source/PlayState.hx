@@ -67,16 +67,21 @@ class PlayState extends FlxState
 		if (_infoMenu.visible)
 		{
 			_gelPet.active = false;
-			_gelPet._clock.pause(true);
+			_clock.pause(true);
 			_hud.active = false;
 		}
 		else
 		{
 			_gelPet.active = true;
-			_gelPet._clock.pause(false);
+			_clock.pause(false);
 			_hud.active = true;
 			saveGame();
 		}
+
+		if (_gelPet.CurrentMood == Gel.Mood.EXCITED || _gelPet.CurrentMood == Gel.Mood.ASHAMED)
+			_clock.pause();
+		else
+			_clock.pause(false);
 	}
 
 	private function saveGame()
