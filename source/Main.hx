@@ -7,7 +7,10 @@ import openfl.display.Sprite;
 
 class Main extends Sprite
 {
-
+	// TODO: Fix Gel Colors
+	// TODO: Add END_GAME Flags
+	// TODO: Makes saving work for at least the config screen
+	// TODO: Make Game Over screen
 	public function new()
 	{
 		// SAVE BEGIN
