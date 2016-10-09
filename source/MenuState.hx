@@ -32,8 +32,11 @@ class MenuState extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 
-		// TODO: Animate this
-		_sprEgg =  new FlxSprite(0, 0, AssetPaths.Egg__png);
+		
+		_sprEgg =  new FlxSprite(0, 0);
+		_sprEgg.loadGraphic(AssetPaths.Egg__png, true, 32, 32);
+		_sprEgg.animation.add("bounce", [0, 1, 2, 1], 7, true);
+		_sprEgg.animation.add("crack", [3, 4, 5], 3, false);
 		_sprEgg.x = (FlxG.width/2) - (_sprEgg.width/2);
 		_sprEgg.y = (FlxG.height/2) - (_sprEgg.height/2);
 		add(_sprEgg);
@@ -54,6 +57,9 @@ class MenuState extends FlxState
 		if(FlxG.keys.pressed.ENTER || FlxG.gamepads.anyJustPressed(START))
 			pressStart();
 
+		if(_sprEgg.animation.curAnim == null)
+			_sprEgg.animation.play("bounce");
+
 		super.update(elapsed);
 	}
 
@@ -61,7 +67,7 @@ class MenuState extends FlxState
 	{
 		_sndSelect.play(true);
 
-		// TODO: Play Egg cracking animation
+		_sprEgg.animation.play("crack");
 
 		FlxG.camera.fade(FlxColor.fromRGB(136, 192, 112, 0), 0.5, true, function()
 			{

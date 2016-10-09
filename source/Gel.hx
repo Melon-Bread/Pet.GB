@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.system.FlxSound;
 
 class Gel extends FlxSprite
 {	
@@ -38,6 +39,9 @@ class Gel extends FlxSprite
 	// Sleep Timer
 	private var _hoursAsleep:Int = 0;
 	
+	// Sound Effects
+	private var _sndExcited:FlxSound;
+	private var _sndAshamed:FlxSound;
 
 	// Gels internal clock
 	public var _clock:Clock;
@@ -51,14 +55,19 @@ class Gel extends FlxSprite
 		animation.add("happy", [6, 7, 8, 9, 10, 11, 10, 9, 8, 7], 5, true);
 		animation.add("angry", [12, 13, 14, 13], 5, true);
 		animation.add("sleeping", [15, 16, 17, 16], 3, true);
-		animation.add("excited", [18, 19, 20, 19], 6, false);
+		animation.add("excited", [18, 19, 20, 20, 19, 18], 6, false);
 		animation.add("ashamed", [21, 22, 23, 22], 4, false);
 
 		_clock = clock;
 
+		// Sound Effects
+		_sndExcited = FlxG.sound.load(AssetPaths.Excited__ogg);
+		_sndAshamed = FlxG.sound.load(AssetPaths.Ashamed__ogg);
+
 		// DEBUG
 		FlxG.watch.add(this, "Age");
 		FlxG.watch.add(this, "CurrentMood");
+		FlxG.watch.add(animation, "finished");
 		FlxG.watch.add(this, "CurrentNeed");
 		FlxG.watch.add(this.animation, "name", "Gel.animation");
 		FlxG.watch.add(this, "Wait");
@@ -87,6 +96,11 @@ class Gel extends FlxSprite
 		if (_clock.DayPassed)
 			newDay();
 
+		if (animation.name == "excited" && !_sndExcited.playing)
+			resumeMood();
+		else if (animation.name == "ashamed" && !_sndAshamed.playing)
+			resumeMood();
+
 		checkMood();
 		checkNeed();
 		checkRange();
@@ -96,6 +110,10 @@ class Gel extends FlxSprite
 	{
 		if (_isAsleep)
 			CurrentMood = SLEEPING;
+		else if (CurrentMood == EXCITED)
+			return;
+		else if (CurrentMood == ASHAMED)
+			return;
 		else 
 		{
 			if (Happiness >= 61)
@@ -138,7 +156,6 @@ class Gel extends FlxSprite
 			CurrentNeed = SLEEPY;
 		else
 			CurrentNeed = NONE;
-		// TODO: Make/Play alert type sound effect when need change
 	}
 
 	public function EatFood():Void
@@ -150,7 +167,7 @@ class Gel extends FlxSprite
 		{
 			Happiness -= 5; // Unhappy from over feeding
 			Discipline -= 5;
-			// TODO: Play ashamed animationx
+			beAshamed();
 		}
 		else
 		{
@@ -173,12 +190,12 @@ class Gel extends FlxSprite
 				Happiness -= 5;
 				Fullness -= 5;
 				Sleepiness += 15;
-				// TODO: play ashamed animation
+				beExcited();
 			}
 		}
 		else
 		{
-			// TODO: Play ashamed animation
+			beAshamed();
 		}
 		// Can only study once per hour, even if check failed
 		_hasStudied = true;
@@ -189,7 +206,7 @@ class Gel extends FlxSprite
 		if (!_isTired)
 		{
 			Happiness -= 5;
-			// TODO: Play ashamed animation
+			beAshamed();
 		}
 		else
 		{
@@ -209,7 +226,7 @@ class Gel extends FlxSprite
 
 		Happiness += 10;
 		Discipline -= 10;
-		// TODO: Play excited animation
+		beExcited();
 	}
 
 	public function Scold():Void
@@ -222,9 +239,8 @@ class Gel extends FlxSprite
 
 		Happiness -= 10;
 		Discipline += 10;
-		// TODO: Play ashamed animation
+		beAshamed();
 	}
-
 	public function Wipe():Void
 	{
 		Wait = true;
@@ -233,7 +249,7 @@ class Gel extends FlxSprite
 		if (!_wasteReady && !_madeWaste)
 		{
 			Happiness -=5;
-			// TODO: Pay ashamed animation to show bad wipe
+			beAshamed();
 			return;
 		}
 
@@ -242,7 +258,7 @@ class Gel extends FlxSprite
 		{
 			Happiness += 10;
 			Discipline += 10;
-			// TODO: Play excited animation to show good wipe
+			beExcited();
 		}
 
 		// Late Wipe
@@ -284,12 +300,22 @@ class Gel extends FlxSprite
 
 	private function beExcited():Void
 	{
-
-	}
+		CurrentMood = EXCITED;
+		this.animation.play("excited");
+		_sndExcited.play(true);
+	}	
 
 	private function beAshamed():Void
 	{
+		CurrentMood = ASHAMED;
+		this.animation.play("ashamed");
+		_sndAshamed.play(true);
+	}
 
+	private function resumeMood():Void
+	{
+		CurrentMood = NEUTRAL;
+		checkMood;
 	}
 
 	private function newHour():Void
