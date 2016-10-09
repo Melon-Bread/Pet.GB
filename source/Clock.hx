@@ -12,7 +12,7 @@ class Clock
 	public var HourPassed:Bool = false;
 	public var DayPassed:Bool = false;
 
-	public function new(RtG:Int = 10, HtD = 24) //60 & 24
+	public function new(RtG:Int = 20, HtD = 24) //60 & 24
 	{
 		_timer = new FlxTimer();
 		// Every 3 real-time minutes 1 in-game hour passes
