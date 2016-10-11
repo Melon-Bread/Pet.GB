@@ -17,6 +17,7 @@ class PlayState extends FlxState
 	private var _hud:HUD;
 
 	private var _infoMenu:InfoMenu;
+	private var _configMenu:ConfigMenu;
 
 
 	override public function create():Void
@@ -30,32 +31,27 @@ class PlayState extends FlxState
 
 		_clock = new Clock();
 
-		if (_save.data.GelPet == null)
-		{
-			_gelPet = new Gel(0, 0, _clock);
-			_gelPet.x = ((FlxG.width/2) - (_gelPet.width/2));
-			_gelPet.y = ((FlxG.height/2) - (_gelPet.height/2));
-		}
-		else
-		{
-			_gelPet = _save.data.gel;
-			_gelPet._clock = _save.data.clock;
-		}
+		_gelPet = new Gel(0, 0, _clock);
+		_gelPet.x = ((FlxG.width/2) - (_gelPet.width/2));
+		_gelPet.y = ((FlxG.height/2) - (_gelPet.height/2));
 		add(_gelPet);
 
 		// Interface
 		_infoMenu = new InfoMenu(_gelPet);
-		if (_save.data.HUD == null)
-			_hud = new HUD(_gelPet, _clock, _infoMenu);
-		else
-			_hud = _save.data.hud;
+		_configMenu = new ConfigMenu();
+		_hud = new HUD(_gelPet, _clock, _infoMenu, _configMenu);
 		add(_hud);
 		add(_infoMenu);
+		add(_configMenu);
 
 		super.create();
 		
 		// DEBUG
 		FlxG.debugger.setLayout(FlxDebuggerLayout.RIGHT);
+
+		// Loads Settings
+		FlxG.sound.muted = _save.data.muted;
+
 
 		// SAVE END
 		_save.close();
@@ -64,10 +60,10 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		if (_infoMenu.visible)
+		if (_infoMenu.visible || _configMenu.visible)
 		{
 			_gelPet.active = false;
-			_clock.pause(true);
+			_clock.pause();
 			_hud.active = false;
 		}
 		else
@@ -75,44 +71,11 @@ class PlayState extends FlxState
 			_gelPet.active = true;
 			_clock.pause(false);
 			_hud.active = true;
-			saveGame();
 		}
 
 		if (_gelPet.CurrentMood == Gel.Mood.EXCITED || _gelPet.CurrentMood == Gel.Mood.ASHAMED)
 			_clock.pause();
 		else
 			_clock.pause(false);
-	}
-
-	private function saveGame()
-	{
-		// SAVE BEGIN
-		var _save:FlxSave = new FlxSave();
-		_save.bind("Pet.GB");
-
-		// SAVED DATA
-		_save.data.gel = _gelPet;
-		_save.data.clock = _gelPet._clock;
-		_save.data.hud = _hud;
-		//_save.data.age = _gel.age;
-
-		// WRITE SAVE
-		//_save.flush();
-
-		// SAVE END
-		_save.close;
-	}
-
-	private function quitGame():Void
-	{
-		// SAVE BEGIN
-		var _save:FlxSave = new FlxSave();
-		_save.bind("Pet.GB");
-
-		// SAVED DATA
-		_save.data.HUD = _hud;
-
-		// SAVE END
-		_save.close;
 	}
 }

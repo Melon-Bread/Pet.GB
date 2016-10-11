@@ -27,6 +27,7 @@ class InfoMenu extends FlxTypedGroup<FlxSprite>
 		_sprBackground = new FlxSprite(9, 9, AssetPaths.Menu__png);
 		add(_sprBackground);
 
+		// Title
 		_txtTitle = new FlxText((_sprBackground.x + 11), (_sprBackground.y + 2), 0, "Gel Info", 16);
 		_txtTitle.setFormat(AssetPaths.EarlyGameBoy__ttf, 16, FlxColor.fromRGB(8, 24, 32, 0), CENTER);
 		add(_txtTitle);
@@ -60,8 +61,6 @@ class InfoMenu extends FlxTypedGroup<FlxSprite>
 
 	public function OpenMenu():Void
 	{
-		//_sprBackground.drawFrame();
-		
 		visible = true;
 		active = true;
 		updateInfo();

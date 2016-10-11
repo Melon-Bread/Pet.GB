@@ -7,7 +7,6 @@ import openfl.display.Sprite;
 
 class Main extends Sprite
 {
-	// TODO: Fix Gel Colors
 	// TODO: Add END_GAME Flags
 	// TODO: Makes saving work for at least the config screen
 	// TODO: Make Game Over screen
@@ -18,17 +17,13 @@ class Main extends Sprite
 		_save.bind("Pet.GB");
 
 		super();
-		addChild(new FlxGame(0, 0, MenuState));
+		addChild(new FlxGame(0, 0, MenuState, 1, 60, 60, true, false));
 
-		// Loads volume if exists
-		if (_save.data.volume != null)
-			FlxG.sound.volume = _save.data.volume;
-		// Set save data volume to default (100%)
-		else
-			_save.data.volume = 1;
-
-		// SAVE WRITE
-		_save.flush();
+		// Loads Settings
+		if (_save.data.gameMuted = true)
+			FlxG.sound.muted = _save.data.muted;
+		if (_save.data.arrowInput == null)
+			_save.data.arrowInput = true;
 
 		// SAVE END
 		_save.close();

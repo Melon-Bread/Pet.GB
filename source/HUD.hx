@@ -8,6 +8,8 @@ import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
+import haxe.xml.Parser;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -52,22 +54,29 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	// Menus
 	private var _infoMenu:InfoMenu;
+	private var _configMenu:ConfigMenu;
 
 	// Misc
 	private var _menuOption:Int;
 	private var _sprSelect:FlxSprite;
 	private var _gel:Gel;
 	private var _clock:Clock;
+	private var _usingArrows:Bool = true;
 	
-	public function new(gel:Gel, clock:Clock, infoMenu:InfoMenu)
+	public function new(gel:Gel, clock:Clock, infoMenu:InfoMenu, configMenu:ConfigMenu)
 	{
 		super();
+
+		loadSettings();
 
 		// Misc
 		_menuOption = 0;
 		_gel = gel;
 		_clock = clock;
 		_infoMenu = infoMenu;
+		_configMenu = configMenu;
+
+
 
 		// Top
 		_sprTop = new FlxSprite(0, 0, AssetPaths.HUD_Background__png);
@@ -179,19 +188,43 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		loadSettings();
 
-		// TODO: Add WASD support?
-		// TODO: Start + Select gives prompt to delete save file
-		if (FlxG.keys.justPressed.UP || FlxG.gamepads.anyJustPressed(DPAD_UP))
-			nextOption(UP);
-		else if (FlxG.keys.justPressed.DOWN || FlxG.gamepads.anyJustPressed(DPAD_DOWN))
-			nextOption(DOWN);
-		else if (FlxG.keys.justPressed.LEFT || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
-			nextOption(LEFT);
-		else if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
-			nextOption(RIGHT);
-		else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
-			makeOption(_menuOption);
+		if (_gel.ENDGAME)
+		{
+			FlxG.camera.fade(FlxColor.fromRGB(8, 24, 32, 0), 0.5, true, function()
+			{
+				FlxG.switchState(new EndState());
+			});
+		}
+
+
+		if (_usingArrows)
+		{
+				if (FlxG.keys.justPressed.UP || FlxG.gamepads.anyJustPressed(DPAD_UP))
+				nextOption(UP);
+			else if (FlxG.keys.justPressed.DOWN || FlxG.gamepads.anyJustPressed(DPAD_DOWN))
+				nextOption(DOWN);
+			else if (FlxG.keys.justPressed.LEFT || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
+				nextOption(LEFT);
+			else if (FlxG.keys.justPressed.RIGHT || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
+				nextOption(RIGHT);
+			else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
+				makeOption(_menuOption);
+		}
+		else
+		{
+			if (FlxG.keys.justPressed.W || FlxG.gamepads.anyJustPressed(DPAD_UP))
+				nextOption(UP);
+			else if (FlxG.keys.justPressed.S || FlxG.gamepads.anyJustPressed(DPAD_DOWN))
+				nextOption(DOWN);
+			else if (FlxG.keys.justPressed.A || FlxG.gamepads.anyJustPressed(DPAD_LEFT))
+				nextOption(LEFT);
+			else if (FlxG.keys.justPressed.D || FlxG.gamepads.anyJustPressed(DPAD_RIGHT))
+				nextOption(RIGHT);
+			else if (FlxG.keys.justPressed.X || FlxG.gamepads.anyJustPressed(B)) 
+				makeOption(_menuOption);
+		}
 
 		// Wasting Check
 		if (_gel._madeWaste == true)
@@ -281,9 +314,9 @@ class HUD extends FlxTypedGroup<FlxSprite>
 					_sprSelect.x = _menuOption * 40;
 					_sprSelect.y = 0;
 				}
+		}
+		_sndNext.play(true);
 	}
-	_sndNext.play(true);
-}
 
 	private function makeOption(option:Int):Void
 	{
@@ -382,7 +415,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 
 	private function showConfig():Void
 	{
-		// TODO: Make Config menu and call it here
+		_configMenu.OpenMenu();
 	}
 
 	private function showThought(thought:String):Void
@@ -410,6 +443,18 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprInteraction.animation.play("none");
 		_gel.Wait = false;
 	}
+
+	private function loadSettings():Void
+	{
+		var _save = new FlxSave();
+		_save.bind("Pet.GB");
+
+		_usingArrows = _save.data.arrowInput;
+		FlxG.sound.muted = _save.data.muted;
+
+		_save.close();
+	}
+
 }
 
 private enum MenuDirection

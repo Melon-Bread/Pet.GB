@@ -3,12 +3,18 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.system.FlxSound;
+import flixel.util.FlxSave;
 
 class Gel extends FlxSprite
 {	
 	// Modifiers Range
 	private var MIN_LEVEL(default, never):Int = 0;
 	private var MAX_LEVEL(default, never):Int = 100;
+
+	// END_GAME
+	public var ENDGAME:Bool = false;
+	private var _endFlags:Int = 0;
+	private var _hoursSuffering:Int = 0;
 
 	// Usless Stats that have no pupose yet
 	public var Intellect:Int = 1; // Had to be somewhat smart to get out of the egg
@@ -65,6 +71,9 @@ class Gel extends FlxSprite
 		_sndAshamed = FlxG.sound.load(AssetPaths.Ashamed__ogg);
 
 		// DEBUG
+		FlxG.watch.add(this, "ENDGAME");
+		FlxG.watch.add(this, "_endFlags");
+		FlxG.watch.add(this, "_hoursSuffering");
 		FlxG.watch.add(this, "Age");
 		FlxG.watch.add(this, "CurrentMood");
 		FlxG.watch.add(animation, "finished");
@@ -89,6 +98,11 @@ class Gel extends FlxSprite
 	override function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+
+		loadSettings(); 
+
+		if (_endFlags > 2)
+			ENDGAME = true;
 
 		_clock.update();
 		if (_clock.HourPassed)
@@ -358,12 +372,22 @@ class Gel extends FlxSprite
 		_hasStudied = false;
 
 		_clock.HourPassed = false;
+
+		// END_GAME Checks
+		if (CurrentMood == ANGRY || _madeWaste || _isHungry)
+			_hoursSuffering ++;
+		else
+			_hoursSuffering = 0;
+
+		if (_hoursSuffering > 1)
+			_endFlags++;
+		else if (_hoursSuffering > 3)
+			ENDGAME = true;
 	}
 
 	private function newDay():Void
 	{
 		Age++;
-		// TODO: Add END_GAME checks here
 		_clock.DayPassed = false;
 	}
 
@@ -394,6 +418,15 @@ class Gel extends FlxSprite
 			Waste = MAX_LEVEL;
 		else if (Waste < MIN_LEVEL)
 			Waste = MIN_LEVEL;
+	}
+	private function loadSettings():Void
+	{
+		var _save = new FlxSave();
+		_save.bind("Pet.GB");
+
+		FlxG.sound.muted = _save.data.muted;
+
+		_save.close();
 	}
 }
 
