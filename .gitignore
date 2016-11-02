@@ -1,3 +1,9 @@
-# Dir
+# Build Dir
 export/*
-export/.build
+
+# Sublime Text
+PetGB.sublime-project
+PetGB.sublime-workspace
+
+# Misc
+_tmp/*PetGB.sublime-workspace
